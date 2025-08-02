@@ -11,9 +11,14 @@ async function bootstrap() {
     credentials: true,
     allowedHeaders: 'Content-Type, Authorization',
   });
-  app.useStaticAssets(join(__dirname, '..', 'uploads'), {
-    prefix: '/uploads/',
-  });
+
+  // Only use static assets in development mode or when not on Vercel
+  if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    app.useStaticAssets(join(__dirname, '..', 'uploads'), {
+      prefix: '/uploads/',
+    });
+  }
+
   await app.listen(process.env.PORT ?? 8000);
 }
 bootstrap();
