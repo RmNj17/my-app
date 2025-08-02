@@ -13,6 +13,7 @@ import GuideDashboardPage from "./pages/dashboard/GuideDashboardPage";
 import TouristDashboardPage from "./pages/dashboard/TouristDashboardPage";
 import AvailableGuidesPage from "./pages/guides/AvailableGuidesPage";
 import BookGuidePage from "./pages/guides/BookGuidePage";
+import AdminDashboardPage from "./pages/dashboard/AdminDashboardPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -63,6 +64,14 @@ function App() {
           element={
             <ProtectedRoute>
               <TouristDashboardPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/admin"
+          element={
+            <ProtectedRoute>
+              <AdminDashboardPage />
             </ProtectedRoute>
           }
         />
