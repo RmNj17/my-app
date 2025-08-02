@@ -19,11 +19,12 @@ services:
         value: your_jwt_secret_key
       - key: JWT_EXPIRES_IN
         value: 1d
-  - type: web
+
+  - type: static
     name: react-frontend
-    runtime: node
     rootDir: frontend
     buildCommand: yarn build
+    staticPublishPath: dist # change to 'build' if using CRA
     envVars:
       - key: VITE_BASE_URL
         value: https://nest-backend.onrender.com
@@ -31,4 +32,4 @@ services:
 databases:
   - name: my-postgres-db
     databaseName: test_db
-    user: postgres
+    user: myappuser # ✅ FIXED: valid lowercase username
