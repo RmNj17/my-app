@@ -1,8 +1,11 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, OnModuleInit } from '@nestjs/common';
+import { UsersService } from './users/users.service';
 
 @Injectable()
-export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+export class AppService implements OnModuleInit {
+  constructor(private readonly userService: UsersService) {}
+
+  async onModuleInit() {
+    await this.userService.createAdminUser();
   }
 }

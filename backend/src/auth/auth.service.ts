@@ -41,6 +41,7 @@ export class AuthService {
       const user = this.userRepository.create({
         ...data,
         password: hashedPassword,
+        termsAccepted: false, // or set to true if appropriate
       });
 
       await this.em.persistAndFlush(user);

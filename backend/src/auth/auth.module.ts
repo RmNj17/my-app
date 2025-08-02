@@ -5,9 +5,12 @@ import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { JwtStrategy } from './jwt.strategy';
 import { UsersModule } from '../users/users.module';
+import { User } from '../users/entities/user.entity';
+import { MikroOrmModule } from '@mikro-orm/nestjs';
 
 @Module({
   imports: [
+    MikroOrmModule.forFeature([User]),
     PassportModule,
     JwtModule.register({
       secret: process.env.JWT_SECRET,

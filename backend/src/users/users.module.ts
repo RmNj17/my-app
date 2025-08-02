@@ -8,6 +8,6 @@ import { UsersController } from './users.controller';
   imports: [MikroOrmModule.forFeature([User])],
   controllers: [UsersController],
   providers: [UsersService],
-  exports: [MikroOrmModule],
+  exports: [UsersService],
 })
 export class UsersModule {}
