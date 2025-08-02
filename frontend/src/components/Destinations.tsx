@@ -640,7 +640,7 @@ const Destinations: React.FC = () => {
                 <TabPane tab="What's Included" key="included">
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-4 flex items-center text-green-600">
+                      <h4 className="font-semibold mb-4 flex items-center text-green-600">
                         <CheckCircleOutlined className="mr-2" />
                         Included in Your Tour
                       </h4>
@@ -658,7 +658,7 @@ const Destinations: React.FC = () => {
                     </div>
                     <Divider />
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-4 flex items-center text-red-600">
+                      <h4 className="font-semibold mb-4 flex items-center text-red-600">
                         <CloseOutlined className="mr-2" />
                         Not Included
                       </h4>
@@ -676,7 +676,7 @@ const Destinations: React.FC = () => {
                     </div>
                     <Divider />
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-4 flex items-center text-blue-600">
+                      <h4 className="font-semibold mb-4 flex items-center text-blue-600">
                         <InfoCircleOutlined className="mr-2" />
                         What to Bring
                       </h4>
