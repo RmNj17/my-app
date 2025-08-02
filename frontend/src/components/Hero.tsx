@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
   return (
     <header className="relative h-[85vh] overflow-hidden">
       <img
-        src="public/explore.jpg"
+        src="/explore.jpg"
         alt="Beautiful Nepal landscape"
         className="w-full h-full object-cover"
       />
