@@ -1,5 +1,5 @@
 import type React from "react";
-import { Button, Badge } from "antd";
+import { Button } from "antd";
 import { CompassOutlined, CameraOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
