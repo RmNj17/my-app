@@ -55,7 +55,7 @@ interface Destination {
 const destinations: Destination[] = [
   {
     name: "Pokhara",
-    image: "/public/pokhara.jpg",
+    image: "public/pokhara.jpg",
     description:
       "Gateway to the Annapurnas with pristine lakes and stunning mountain views",
     rating: 4.8,
@@ -96,7 +96,7 @@ const destinations: Destination[] = [
       "Light jacket",
     ],
     gallery: [
-      "/public/pokhara.jpg",
+      "public/pokhara.jpg",
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
     ],
@@ -109,7 +109,7 @@ const destinations: Destination[] = [
   },
   {
     name: "Kathmandu",
-    image: "/public/kathmandu.jpeg",
+    image: "public/kathmandu.jpeg",
     description: "Ancient temples, vibrant markets, and rich cultural heritage",
     rating: 4.7,
     tours: 203,
@@ -144,7 +144,7 @@ const destinations: Destination[] = [
       "Small backpack",
     ],
     gallery: [
-      "/public/kathmandu.jpeg",
+      "public/kathmandu.jpeg",
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
     ],
@@ -157,7 +157,7 @@ const destinations: Destination[] = [
   },
   {
     name: "Mount Everest",
-    image: "/public/mteverest.jpeg",
+    image: "public/mteverest.jpeg",
     description: "World's highest peak and the ultimate trekking adventure",
     rating: 4.9,
     tours: 89,
@@ -200,7 +200,7 @@ const destinations: Destination[] = [
       "Medical clearance",
     ],
     gallery: [
-      "/public/mteverest.jpeg",
+      "public/mteverest.jpeg",
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
     ],
@@ -213,7 +213,7 @@ const destinations: Destination[] = [
   },
   {
     name: "Lumbini",
-    image: "/public/lumbini.jpeg",
+    image: "public/lumbini.jpeg",
     description: "Sacred birthplace of Buddha and spiritual pilgrimage site",
     rating: 4.6,
     tours: 124,
@@ -253,7 +253,7 @@ const destinations: Destination[] = [
       "Comfortable shoes",
     ],
     gallery: [
-      "/public/lumbini.jpeg",
+      "public/lumbini.jpeg",
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
     ],
@@ -266,7 +266,7 @@ const destinations: Destination[] = [
   },
   {
     name: "Chitwan",
-    image: "/public/chitwan.jpeg",
+    image: "public/chitwan.jpeg",
     description: "Wildlife safari adventures in Nepal's premier national park",
     rating: 4.7,
     tours: 167,
@@ -308,7 +308,7 @@ const destinations: Destination[] = [
       "Sun hat",
     ],
     gallery: [
-      "/public/chitwan.jpeg",
+      "public/chitwan.jpeg",
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
     ],
@@ -321,7 +321,7 @@ const destinations: Destination[] = [
   },
   {
     name: "Bhaktapur",
-    image: "/public/bhaktapur.jpeg",
+    image: "public/bhaktapur.jpeg",
     description: "Medieval architecture and traditional Newari craftsmanship",
     rating: 4.8,
     tours: 142,
@@ -361,7 +361,7 @@ const destinations: Destination[] = [
       "Small daypack",
     ],
     gallery: [
-      "/public/bhaktapur.jpeg",
+      "public/bhaktapur.jpeg",
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
     ],
