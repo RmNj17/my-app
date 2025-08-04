@@ -2,14 +2,18 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { join } from 'path';
 import { NestExpressApplication } from '@nestjs/platform-express';
+import { MikroORM } from '@mikro-orm/core';
 
 async function bootstrap() {
-  // Handle SSL certificate issues in production
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+
+  // Run migrations in production
   if (process.env.NODE_ENV === 'production') {
-    process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+    const orm = app.get(MikroORM);
+    const migrator = orm.getMigrator();
+    await migrator.up();
   }
 
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.enableCors({
     origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
