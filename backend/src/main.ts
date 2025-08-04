@@ -4,6 +4,11 @@ import { join } from 'path';
 import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
+  // Handle SSL certificate issues in production
+  if (process.env.NODE_ENV === 'production') {
+    process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+  }
+
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.enableCors({
     origin: '*',
