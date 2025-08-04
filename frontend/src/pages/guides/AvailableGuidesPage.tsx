@@ -25,7 +25,7 @@ import {
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { getGuides } from "../../api/guides";
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const { Title, Text } = Typography;
 
@@ -44,7 +44,7 @@ const AvailableGuidesPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
   const token = localStorage.getItem("authToken");
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const userRole = user?.role;
@@ -52,13 +52,15 @@ const AvailableGuidesPage: React.FC = () => {
   // Add this useEffect for role-based access control
   useEffect(() => {
     if (!token) {
-      message.error("You must be logged in to view this page");
+      message.error(
+        t("auth.loginRequired", "You must be logged in to view this page")
+      );
       navigate("/login");
       return;
     }
 
     if (userRole === "guide") {
-      message.error("Guides cannot access this page");
+      message.error(t("guides.accessDenied", "Guides cannot access this page"));
       navigate("/");
       return;
     }
@@ -78,7 +80,7 @@ const AvailableGuidesPage: React.FC = () => {
       const response = await getGuides();
       setGuides(response);
     } catch (error) {
-      message.error("Failed to load guides");
+      message.error(t("guides.failedToLoad", "Failed to load guides"));
     } finally {
       setLoading(false);
     }
@@ -97,7 +99,9 @@ const AvailableGuidesPage: React.FC = () => {
   const handleGuideAction = (guideId: string) => {
     if (userRole === "admin") {
       // Admin should view guide details or manage them
-      message.info("Admin guide management coming soon!");
+      message.info(
+        t("guides.adminManagement", "Admin guide management coming soon!")
+      );
       return;
     }
 
@@ -116,24 +120,34 @@ const AvailableGuidesPage: React.FC = () => {
             onClick={() => navigate("/")}
             className="mb-4 text-blue-600 hover:text-blue-700"
           >
-            Back to Home
+            {t("navigation.backToHome", "Back to Home")}
           </Button>
           <div className="flex items-center justify-between">
             <div>
               <Title level={2} className="mb-2 text-gray-800">
-                {userRole === "admin" ? "Manage Guides" : "Available Guides"}
+                {userRole === "admin"
+                  ? t("guides.manageGuides", "Manage Guides")
+                  : t("pages.availableGuides.title", "Available Guides")}
               </Title>
               <Text className="text-gray-600 text-base">
                 {userRole === "admin"
-                  ? "View and manage all registered guides"
-                  : "Find and book your perfect Nepal guide"}
+                  ? t(
+                      "guides.adminDescription",
+                      "View and manage all registered guides"
+                    )
+                  : t(
+                      "pages.availableGuides.subtitle",
+                      "Find and book your perfect Nepal guide"
+                    )}
               </Text>
             </div>
             <div className="text-right">
               <div className="text-2xl font-bold text-blue-600">
                 {filteredGuides.length}
               </div>
-              <div className="text-sm text-gray-500">guides available</div>
+              <div className="text-sm text-gray-500">
+                {t("guides.guidesAvailable", "Available Guides")}
+              </div>
             </div>
           </div>
         </div>
@@ -142,10 +156,13 @@ const AvailableGuidesPage: React.FC = () => {
         <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
           <div className="max-w-md">
             <Text className="block mb-3 font-medium text-gray-700">
-              Search Guides
+              {t("pages.availableGuides.searchGuides", "Search Guides")}
             </Text>
             <Input
-              placeholder="Search by guide name..."
+              placeholder={t(
+                "pages.availableGuides.searchPlaceholder",
+                "Search by guide name..."
+              )}
               prefix={<SearchOutlined className="text-blue-500" />}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -159,11 +176,18 @@ const AvailableGuidesPage: React.FC = () => {
         {loading ? (
           <div className="bg-white rounded-lg shadow-sm p-12 text-center">
             <Spin size="large" />
-            <Text className="block mt-4 text-gray-600">Loading guides...</Text>
+            <Text className="block mt-4 text-gray-600">
+              {t("pages.availableGuides.loading", "Loading guides...")}
+            </Text>
           </div>
         ) : filteredGuides.length === 0 ? (
           <div className="bg-white rounded-lg shadow-sm p-12 text-center">
-            <Empty description="No guides found" />
+            <Empty
+              description={t(
+                "pages.availableGuides.noGuides",
+                "No guides found"
+              )}
+            />
           </div>
         ) : (
           <Row gutter={[24, 24]}>
@@ -185,7 +209,7 @@ const AvailableGuidesPage: React.FC = () => {
                         </Title>
                         {guide.guideLicense && (
                           <Badge
-                            count="Certified"
+                            count={t("guides.certified", "Certified")}
                             style={{
                               backgroundColor: "#f0f9ff",
                               color: "#0369a1",
@@ -231,7 +255,9 @@ const AvailableGuidesPage: React.FC = () => {
                         : "bg-blue-600 hover:bg-blue-700"
                     } border-none font-medium rounded-lg`}
                   >
-                    {userRole === "admin" ? "Manage Guide" : "Book This Guide"}
+                    {userRole === "admin"
+                      ? t("guides.manageGuide", "Manage Guide")
+                      : t("guides.bookThisGuide", "Book This Guide")}
                   </Button>
                 </Card>
               </Col>

@@ -32,6 +32,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   const availableLanguages = [
     { code: "en", name: "English", flag: "🇺🇸" },
     { code: "ne", name: "नेपाली", flag: "🇳🇵" },
+    { code: "es", name: "Español", flag: "🇪🇸" },
+    { code: "zh", name: "中文", flag: "🇨🇳" },
   ];
 
   const changeLanguage = (language: string) => {

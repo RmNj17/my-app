@@ -43,6 +43,16 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           🇳🇵 {t("language.nepali")}
         </span>
       </Option>
+      <Option value="es">
+        <span className="flex items-center gap-2">
+          🇪🇸 {t("language.spanish")}
+        </span>
+      </Option>
+      <Option value="zh">
+        <span className="flex items-center gap-2">
+          🇨🇳 {t("language.chinese")}
+        </span>
+      </Option>
     </Select>
   );
 };

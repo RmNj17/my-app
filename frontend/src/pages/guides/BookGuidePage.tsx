@@ -24,6 +24,7 @@ import {
 } from "@ant-design/icons";
 import { bookGuide } from "../../api/bookings";
 import { getGuides } from "../../api/guides";
+import { useTranslation } from "react-i18next";
 
 const { TextArea } = Input;
 const { Title, Text } = Typography;
@@ -45,6 +46,7 @@ const BookGuidePage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const token = localStorage.getItem("authToken");
 
   useEffect(() => {
@@ -58,7 +60,9 @@ const BookGuidePage: React.FC = () => {
       const selectedGuide = guides.find((g: Guide) => g.id === id);
       setGuide(selectedGuide || null);
     } catch (error) {
-      message.error("Failed to load guide details");
+      message.error(
+        t("pages.bookGuide.errorLoadingGuide", "Failed to load guide details")
+      );
     } finally {
       setLoading(false);
     }
@@ -74,21 +78,35 @@ const BookGuidePage: React.FC = () => {
 
   const handleSubmitBooking = async () => {
     if (!date || !messageText.trim()) {
-      message.error("Please select a date and enter a message");
+      message.error(
+        t(
+          "pages.bookGuide.dateAndMessageRequired",
+          "Please select a date and enter a message"
+        )
+      );
       return;
     }
 
     try {
       setSubmitting(true);
       if (!id || !token) {
-        message.error("Guide ID is missing");
+        message.error(
+          t("pages.bookGuide.guideIdMissing", "Guide ID is missing")
+        );
         return;
       }
       await bookGuide(token, id, { date, message: messageText });
-      message.success("Booking request sent successfully!");
+      message.success(
+        t(
+          "pages.bookGuide.bookingSuccess",
+          "Booking request sent successfully!"
+        )
+      );
       navigate("/dashboard/tourist");
     } catch (error) {
-      message.error("Failed to send booking request");
+      message.error(
+        t("pages.bookGuide.bookingError", "Failed to send booking request")
+      );
     } finally {
       setSubmitting(false);
     }
@@ -100,7 +118,7 @@ const BookGuidePage: React.FC = () => {
         <div className="text-center">
           <Spin size="large" />
           <Text className="block mt-4 text-gray-600">
-            Loading guide details...
+            {t("pages.bookGuide.loadingGuide", "Loading guide details...")}
           </Text>
         </div>
       </div>
@@ -118,13 +136,16 @@ const BookGuidePage: React.FC = () => {
             onClick={() => navigate("/guides")}
             className="mb-4 text-blue-600 hover:text-blue-700"
           >
-            Back to Guides
+            {t("navigation.backToGuides", "Back to Guides")}
           </Button>
           <Title level={2} className="mb-2 text-gray-800">
-            Book Your Guide
+            {t("pages.bookGuide.title", "Book Your Guide")}
           </Title>
           <Text className="text-gray-600">
-            Send a booking request with your preferred date and message
+            {t(
+              "pages.bookGuide.subtitle",
+              "Send a booking request with your preferred date and message"
+            )}
           </Text>
         </div>
 
@@ -142,7 +163,7 @@ const BookGuidePage: React.FC = () => {
                 {guide?.guideLicense && (
                   <div className="inline-flex items-center bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
                     <SafetyCertificateOutlined className="mr-1" />
-                    Certified Guide
+                    {t("guides.certifiedGuide", "Certified Guide")}
                   </div>
                 )}
               </div>
@@ -164,15 +185,34 @@ const BookGuidePage: React.FC = () => {
             {/* Booking Tips */}
             <Card className="shadow-md border-0 bg-blue-50">
               <Title level={4} className="text-blue-800 mb-3">
-                Booking Tips
+                {t("pages.bookGuide.bookingTips", "Booking Tips")}
               </Title>
               <ul className="text-sm text-blue-700 space-y-2">
-                <li>• Select your preferred tour date</li>
                 <li>
-                  • Include details about your interests and experience level
+                  •{" "}
+                  {t("pages.bookGuide.tip1", "Select your preferred tour date")}
                 </li>
-                <li>• Mention group size and any special requirements</li>
-                <li>• The guide will respond within 24 hours</li>
+                <li>
+                  •{" "}
+                  {t(
+                    "pages.bookGuide.tip2",
+                    "Include details about your interests and experience level"
+                  )}
+                </li>
+                <li>
+                  •{" "}
+                  {t(
+                    "pages.bookGuide.tip3",
+                    "Mention group size and any special requirements"
+                  )}
+                </li>
+                <li>
+                  •{" "}
+                  {t(
+                    "pages.bookGuide.tip4",
+                    "The guide will respond within 24 hours"
+                  )}
+                </li>
               </ul>
             </Card>
           </div>
@@ -181,7 +221,7 @@ const BookGuidePage: React.FC = () => {
           <div>
             <Card className="shadow-md border-0">
               <Title level={4} className="mb-6 text-gray-800">
-                Booking Details
+                {t("pages.bookGuide.bookingDetails", "Booking Details")}
               </Title>
 
               <div className="space-y-6">
@@ -189,13 +229,16 @@ const BookGuidePage: React.FC = () => {
                 <div>
                   <Text className="block mb-3 font-medium text-gray-700">
                     <CalendarOutlined className="mr-2 text-blue-600" />
-                    Preferred Tour Date
+                    {t("pages.bookGuide.preferredDate", "Preferred Tour Date")}
                   </Text>
                   <DatePicker
                     onChange={handleDateChange}
                     size="large"
                     className="w-full rounded-lg"
-                    placeholder="Select your preferred date"
+                    placeholder={t(
+                      "pages.bookGuide.selectDate",
+                      "Select your preferred date"
+                    )}
                     disabledDate={(current) =>
                       current && current.valueOf() < Date.now() - 86400000
                     }
@@ -206,10 +249,13 @@ const BookGuidePage: React.FC = () => {
                 <div>
                   <Text className="block mb-3 font-medium text-gray-700">
                     <MessageOutlined className="mr-2 text-blue-600" />
-                    Message to Guide
+                    {t("pages.bookGuide.messageToGuide", "Message to Guide")}
                   </Text>
                   <TextArea
-                    placeholder="Tell the guide about your tour preferences, group size, experience level, and any special requirements..."
+                    placeholder={t(
+                      "pages.bookGuide.messagePlaceholder",
+                      "Tell the guide about your tour preferences, group size, experience level, and any special requirements..."
+                    )}
                     rows={6}
                     value={messageText}
                     onChange={(e) => setMessageText(e.target.value)}
@@ -230,10 +276,18 @@ const BookGuidePage: React.FC = () => {
                     className="bg-blue-600 hover:bg-blue-700 border-none font-medium rounded-lg h-12"
                     disabled={!date || !messageText.trim()}
                   >
-                    {submitting ? "Sending Request..." : "Send Booking Request"}
+                    {submitting
+                      ? t("pages.bookGuide.sending", "Sending Request...")
+                      : t(
+                          "pages.bookGuide.sendRequest",
+                          "Send Booking Request"
+                        )}
                   </Button>
                   <Text className="block text-center mt-3 text-gray-500 text-sm">
-                    Your request will be sent directly to the guide
+                    {t(
+                      "pages.bookGuide.requestInfo",
+                      "Your request will be sent directly to the guide"
+                    )}
                   </Text>
                 </div>
               </div>
