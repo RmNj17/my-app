@@ -14,6 +14,7 @@ import {
   CameraOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { signupTourist } from "../../api/auth";
 
 const { Title, Text } = Typography;
@@ -23,6 +24,7 @@ const TouristSignupPage: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const navigate = useNavigate();
   const [form] = Form.useForm();
+  const { t } = useTranslation();
 
   const handleSubmit = async (values: any) => {
     setLoading(true);
@@ -31,12 +33,10 @@ const TouristSignupPage: React.FC = () => {
         ...values,
         role: "tourist",
       });
-      message.success("Account created successfully! Please login.");
+      message.success(t("auth.signupSuccess"));
       navigate("/login");
     } catch (error: any) {
-      message.error(
-        error?.response?.data?.message || "Signup failed. Please try again."
-      );
+      message.error(error?.response?.data?.message || t("auth.signupError"));
     } finally {
       setLoading(false);
     }
@@ -72,7 +72,7 @@ const TouristSignupPage: React.FC = () => {
           onClick={() => navigate("/login")}
           className="mb-6 text-gray-600 hover:text-blue-600 flex items-center font-medium"
         >
-          Back to Login
+          {t("auth.backToLogin")}
         </Button>
 
         {/* Main Signup Card */}
@@ -88,10 +88,10 @@ const TouristSignupPage: React.FC = () => {
               level={2}
               className="mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
-              Join as Tourist
+              {t("auth.joinAsTourist")}
             </Title>
             <Text className="text-gray-600 text-base">
-              Start your Nepal adventure with us
+              {t("auth.startYourAdventure")}
             </Text>
           </div>
 
@@ -99,7 +99,7 @@ const TouristSignupPage: React.FC = () => {
           <div className="mb-8">
             <div className="flex justify-between items-center mb-2">
               <Text className="text-sm text-gray-600">
-                Complete your profile
+                {t("auth.completeProfile")}
               </Text>
               <Text className="text-sm text-blue-600 font-medium">
                 {currentStep}%
@@ -128,21 +128,21 @@ const TouristSignupPage: React.FC = () => {
             {/* Personal Information Section */}
             <div className="mb-6">
               <Text className="text-gray-700 font-semibold text-base block mb-4">
-                Personal Information
+                {t("auth.personalInfo")}
               </Text>
 
               <Form.Item
                 name="name"
                 label={
-                  <span className="text-gray-700 font-medium">Full Name</span>
+                  <span className="text-gray-700 font-medium">
+                    {t("auth.fullName")}
+                  </span>
                 }
-                rules={[
-                  { required: true, message: "Please enter your full name" },
-                ]}
+                rules={[{ required: true, message: t("auth.pleaseEnterName") }]}
               >
                 <Input
                   prefix={<UserOutlined className="text-gray-400" />}
-                  placeholder="Enter your full name"
+                  placeholder={t("auth.enterFullName")}
                   className="rounded-lg border-gray-200 hover:border-blue-400 focus:border-blue-500 h-12"
                 />
               </Form.Item>
@@ -151,12 +151,12 @@ const TouristSignupPage: React.FC = () => {
                 name="email"
                 label={
                   <span className="text-gray-700 font-medium">
-                    Email Address
+                    {t("auth.emailAddress")}
                   </span>
                 }
                 rules={[
-                  { required: true, message: "Please enter your email" },
-                  { type: "email", message: "Please enter a valid email" },
+                  { required: true, message: t("auth.pleaseEnterEmail") },
+                  { type: "email", message: t("auth.validEmail") },
                 ]}
               >
                 <Input
@@ -170,11 +170,11 @@ const TouristSignupPage: React.FC = () => {
                 name="phone"
                 label={
                   <span className="text-gray-700 font-medium">
-                    Phone Number
+                    {t("auth.phoneNumber")}
                   </span>
                 }
                 rules={[
-                  { required: true, message: "Please enter your phone number" },
+                  { required: true, message: t("auth.pleaseEnterPhone") },
                 ]}
               >
                 <Input
@@ -187,16 +187,18 @@ const TouristSignupPage: React.FC = () => {
               <Form.Item
                 name="password"
                 label={
-                  <span className="text-gray-700 font-medium">Password</span>
+                  <span className="text-gray-700 font-medium">
+                    {t("auth.password")}
+                  </span>
                 }
                 rules={[
-                  { required: true, message: "Please enter a password" },
-                  { min: 6, message: "Password must be at least 6 characters" },
+                  { required: true, message: t("auth.pleaseEnterPassword") },
+                  { min: 6, message: t("auth.passwordMinLength") },
                 ]}
               >
                 <Input.Password
                   prefix={<LockOutlined className="text-gray-400" />}
-                  placeholder="Create a strong password"
+                  placeholder={t("auth.createPassword")}
                   iconRender={(visible) =>
                     visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
                   }
@@ -213,7 +215,9 @@ const TouristSignupPage: React.FC = () => {
                 loading={loading}
                 className="w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 border-none rounded-lg font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                {loading ? "Creating Account..." : "Create Tourist Account"}
+                {loading
+                  ? t("auth.creatingAccount")
+                  : t("auth.createTouristAccount")}
               </Button>
             </Form.Item>
           </Form>
@@ -221,13 +225,13 @@ const TouristSignupPage: React.FC = () => {
           {/* Login Link */}
           <div className="text-center pt-6 border-t border-gray-100">
             <Text className="text-gray-600">
-              Already have an account?{" "}
+              {t("auth.alreadyAccount")}{" "}
               <Button
                 type="link"
                 className="text-blue-600 hover:text-blue-700 p-0 h-auto font-semibold"
                 onClick={() => navigate("/login")}
               >
-                Login here
+                {t("auth.loginHere")}
               </Button>
             </Text>
           </div>
@@ -235,13 +239,13 @@ const TouristSignupPage: React.FC = () => {
           {/* Role Switch Option */}
           <div className="mt-4 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg">
             <Text className="text-sm text-gray-600 block text-center mb-3">
-              Want to become a guide instead?
+              {t("auth.becomeGuideInstead")}
             </Text>
             <Button
               className="w-full border-2 border-green-200 text-green-600 hover:bg-green-50 hover:border-green-400 rounded-lg font-medium transition-all duration-200"
               onClick={() => navigate("/signup/guide")}
             >
-              Sign up as Guide
+              {t("auth.signupAsGuide")}
             </Button>
           </div>
         </Card>

@@ -25,7 +25,9 @@ import {
   FileTextOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { signupGuide } from "../../api/auth";
+import LanguageSelector from "../../components/LanguageSelector";
 
 const { Title, Text } = Typography;
 
@@ -34,6 +36,7 @@ const GuideSignupPage: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const navigate = useNavigate();
   const [form] = Form.useForm();
+  const { t } = useTranslation();
 
   const handleSubmit = async (values: any) => {
     setLoading(true);
@@ -56,12 +59,10 @@ const GuideSignupPage: React.FC = () => {
       }
 
       await signupGuide(formData);
-      message.success("Guide account created successfully! Please login.");
+      message.success(t("auth.signupSuccess"));
       navigate("/login");
     } catch (error: any) {
-      message.error(
-        error?.response?.data?.message || "Signup failed. Please try again."
-      );
+      message.error(error?.response?.data?.message || t("auth.signupError"));
     } finally {
       setLoading(false);
     }
@@ -91,6 +92,11 @@ const GuideSignupPage: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-green-50 to-blue-50 rounded-full opacity-30"></div>
       </div>
 
+      {/* Language Selector */}
+      <div className="absolute top-4 right-4 z-20">
+        <LanguageSelector />
+      </div>
+
       <div className="relative z-10 w-full max-w-lg">
         {/* Back to Login Button */}
         <Button
@@ -99,7 +105,7 @@ const GuideSignupPage: React.FC = () => {
           onClick={() => navigate("/login")}
           className="mb-6 text-gray-600 hover:text-green-600 flex items-center font-medium"
         >
-          Back to Login
+          {t("auth.backToLogin")}
         </Button>
 
         {/* Main Signup Card */}
@@ -115,10 +121,10 @@ const GuideSignupPage: React.FC = () => {
               level={2}
               className="mb-2 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent"
             >
-              Become a Guide
+              {t("auth.becomeAGuide")}
             </Title>
             <Text className="text-gray-600 text-base">
-              Join our community of expert Nepal guides
+              {t("auth.shareExpertise")}
             </Text>
           </div>
 
@@ -126,7 +132,7 @@ const GuideSignupPage: React.FC = () => {
           <div className="mb-8">
             <div className="flex justify-between items-center mb-2">
               <Text className="text-sm text-gray-600">
-                Complete your profile
+                {t("signup.completeProfile")}
               </Text>
               <Text className="text-sm text-green-600 font-medium">
                 {currentStep}%
@@ -155,21 +161,23 @@ const GuideSignupPage: React.FC = () => {
             {/* Personal Information Section */}
             <div className="mb-6">
               <Text className="text-gray-700 font-semibold text-base block mb-4">
-                Personal Information
+                {t("signup.personalInfo")}
               </Text>
 
               <Form.Item
                 name="name"
                 label={
-                  <span className="text-gray-700 font-medium">Full Name</span>
+                  <span className="text-gray-700 font-medium">
+                    {t("signup.fullName")}
+                  </span>
                 }
                 rules={[
-                  { required: true, message: "Please enter your full name" },
+                  { required: true, message: t("signup.pleaseEnterName") },
                 ]}
               >
                 <Input
                   prefix={<UserOutlined className="text-gray-400" />}
-                  placeholder="Enter your full name"
+                  placeholder={t("signup.enterFullName")}
                   className="rounded-lg border-gray-200 hover:border-green-400 focus:border-green-500 h-12"
                 />
               </Form.Item>
@@ -178,12 +186,12 @@ const GuideSignupPage: React.FC = () => {
                 name="email"
                 label={
                   <span className="text-gray-700 font-medium">
-                    Email Address
+                    {t("signup.emailAddress")}
                   </span>
                 }
                 rules={[
-                  { required: true, message: "Please enter your email" },
-                  { type: "email", message: "Please enter a valid email" },
+                  { required: true, message: t("signup.pleaseEnterEmail") },
+                  { type: "email", message: t("signup.validEmail") },
                 ]}
               >
                 <Input
@@ -197,11 +205,11 @@ const GuideSignupPage: React.FC = () => {
                 name="phone"
                 label={
                   <span className="text-gray-700 font-medium">
-                    Phone Number
+                    {t("signup.phoneNumber")}
                   </span>
                 }
                 rules={[
-                  { required: true, message: "Please enter your phone number" },
+                  { required: true, message: t("signup.pleaseEnterPhone") },
                 ]}
               >
                 <Input
@@ -214,16 +222,18 @@ const GuideSignupPage: React.FC = () => {
               <Form.Item
                 name="password"
                 label={
-                  <span className="text-gray-700 font-medium">Password</span>
+                  <span className="text-gray-700 font-medium">
+                    {t("signup.password")}
+                  </span>
                 }
                 rules={[
-                  { required: true, message: "Please enter a password" },
-                  { min: 6, message: "Password must be at least 6 characters" },
+                  { required: true, message: t("signup.pleaseEnterPassword") },
+                  { min: 6, message: t("signup.passwordMinLength") },
                 ]}
               >
                 <Input.Password
                   prefix={<LockOutlined className="text-gray-400" />}
-                  placeholder="Create a strong password"
+                  placeholder={t("signup.createPassword")}
                   iconRender={(visible) =>
                     visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
                   }
@@ -235,14 +245,14 @@ const GuideSignupPage: React.FC = () => {
             {/* Documents Section */}
             <div className="mb-6">
               <Text className="text-gray-700 font-semibold text-base block mb-4">
-                Required Documents
+                {t("signup.requiredDocuments")}
               </Text>
 
               <Form.Item
                 name="guideLicense"
                 label={
                   <span className="text-gray-700 font-medium">
-                    Guide License *
+                    {t("signup.guideLicense")} *
                   </span>
                 }
                 valuePropName="fileList"
@@ -252,7 +262,7 @@ const GuideSignupPage: React.FC = () => {
                 rules={[
                   {
                     required: true,
-                    message: "Please upload your guide license",
+                    message: t("signup.uploadGuideLicense"),
                   },
                 ]}
               >
@@ -266,10 +276,10 @@ const GuideSignupPage: React.FC = () => {
                     <FileTextOutlined className="text-3xl text-green-600" />
                   </p>
                   <p className="ant-upload-text text-gray-700 font-medium">
-                    Upload Guide License
+                    {t("signup.uploadLicense")}
                   </p>
                   <p className="ant-upload-hint text-gray-500">
-                    Click or drag your license document here (PDF, JPG, PNG)
+                    {t("signup.dragLicense")}
                   </p>
                 </Upload.Dragger>
               </Form.Item>
@@ -278,7 +288,7 @@ const GuideSignupPage: React.FC = () => {
                 name="profilePicture"
                 label={
                   <span className="text-gray-700 font-medium">
-                    Profile Picture (Optional)
+                    {t("signup.profilePicture")} ({t("signup.optional")})
                   </span>
                 }
                 valuePropName="fileList"
@@ -296,10 +306,10 @@ const GuideSignupPage: React.FC = () => {
                     <CameraOutlined className="text-3xl text-blue-600" />
                   </p>
                   <p className="ant-upload-text text-gray-700 font-medium">
-                    Upload Profile Picture
+                    {t("signup.uploadProfile")}
                   </p>
                   <p className="ant-upload-hint text-gray-500">
-                    Click or drag your photo here (JPG, PNG)
+                    {t("signup.dragPhoto")}
                   </p>
                 </Upload.Dragger>
               </Form.Item>
@@ -313,7 +323,9 @@ const GuideSignupPage: React.FC = () => {
                 loading={loading}
                 className="w-full h-12 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 border-none rounded-lg font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                {loading ? "Creating Account..." : "Create Guide Account"}
+                {loading
+                  ? t("signup.creatingAccount")
+                  : t("signup.createGuideAccount")}
               </Button>
             </Form.Item>
           </Form>
@@ -321,13 +333,13 @@ const GuideSignupPage: React.FC = () => {
           {/* Login Link */}
           <div className="text-center pt-6 border-t border-gray-100">
             <Text className="text-gray-600">
-              Already have an account?{" "}
+              {t("auth.alreadyHaveAccount")}{" "}
               <Button
                 type="link"
                 className="text-green-600 hover:text-green-700 p-0 h-auto font-semibold"
                 onClick={() => navigate("/login")}
               >
-                Login here
+                {t("auth.loginHere")}
               </Button>
             </Text>
           </div>
@@ -336,8 +348,7 @@ const GuideSignupPage: React.FC = () => {
         {/* Footer */}
         <div className="text-center mt-8">
           <Text className="text-gray-500 text-sm">
-            By creating an account, you agree to our Terms of Service and
-            Privacy Policy
+            {t("auth.termsAgreement")}
           </Text>
         </div>
       </div>
