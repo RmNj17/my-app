@@ -9,7 +9,7 @@ import {
 } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../store";
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Hero from "../../components/Hero";
@@ -21,7 +21,7 @@ import Navigation from "../../components/Navigation";
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
   const { user } = useSelector((state: RootState) => state.auth);
   const isAuthenticated = !!user;
 
@@ -54,12 +54,19 @@ const HomePage: React.FC = () => {
           {isAuthenticated ? (
             <>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Welcome back, {user?.name?.split(" ")[0]}! 👋
+                {t("pages.dashboard.welcomeBack", "Welcome back")},{" "}
+                {user?.name?.split(" ")[0]}! 👋
               </h2>
               <p className="text-lg text-blue-100 mb-8 leading-relaxed">
                 {user?.role === "guide"
-                  ? "Check your dashboard for new booking requests and manage your tours."
-                  : "Continue your Nepal adventure by booking amazing experiences with our certified guides."}
+                  ? t(
+                      "pages.dashboard.checkDashboard",
+                      "Check your dashboard for new booking requests and manage your tours."
+                    )
+                  : t(
+                      "pages.dashboard.continueAdventure",
+                      "Continue your Nepal adventure by booking amazing experiences with our certified guides."
+                    )}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -69,7 +76,9 @@ const HomePage: React.FC = () => {
                   onClick={() => navigate("/dashboard")}
                   icon={<UserOutlined />}
                 >
-                  {user?.role === "guide" ? "View My Dashboard" : "My Bookings"}
+                  {user?.role === "guide"
+                    ? t("pages.dashboard.viewDashboard", "View My Dashboard")
+                    : t("pages.dashboard.myBookings", "My Bookings")}
                 </Button>
                 <Button
                   size="large"
@@ -80,20 +89,24 @@ const HomePage: React.FC = () => {
                   }
                 >
                   {user?.role === "guide"
-                    ? "Explore Destinations"
-                    : "Find New Guides"}
+                    ? t("pages.dashboard.exploreDest", "Explore Destinations")
+                    : t("pages.dashboard.findNewGuides", "Find New Guides")}
                 </Button>
               </div>
             </>
           ) : (
             <>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Ready to Start Your Nepal Adventure?
+                {t(
+                  "homepage.cta.readyToStart",
+                  "Ready to Start Your Nepal Adventure?"
+                )}
               </h2>
               <p className="text-lg text-blue-100 mb-8 leading-relaxed">
-                Join thousands of travelers who've discovered Nepal's wonders
-                with our certified guides. Your journey of a lifetime is just
-                one click away.
+                {t(
+                  "homepage.cta.joinThousands",
+                  "Join thousands of travelers who've discovered Nepal's wonders with our certified guides. Your journey of a lifetime is just one click away."
+                )}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -103,7 +116,7 @@ const HomePage: React.FC = () => {
                   onClick={() => navigate("/guides")}
                   icon={<CompassOutlined />}
                 >
-                  Book Your Guide Today
+                  {t("homepage.cta.bookGuideToday", "Book Your Guide Today")}
                 </Button>
                 <Button
                   size="large"
@@ -111,7 +124,7 @@ const HomePage: React.FC = () => {
                   icon={<EnvironmentOutlined />}
                   onClick={() => scrollToSection("destinations")}
                 >
-                  Browse Destinations
+                  {t("homepage.cta.browseDestinations", "Browse Destinations")}
                 </Button>
               </div>
             </>

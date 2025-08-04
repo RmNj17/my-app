@@ -329,7 +329,16 @@
       "viewDashboard": "Ver Mi Panel",
       "manageBookings": "Gestionar Reservas",
       "checkDashboard": "Revisa tu panel para nuevas solicitudes de reserva y gestiona tus tours.",
-      "continueAdventure": "Continúa tu aventura en Nepal reservando experiencias increíbles con nuestros guías certificados."
+      "continueAdventure": "Continúa tu aventura en Nepal reservando experiencias increíbles con nuestros guías certificados.",
+      "welcomeBack": "Bienvenido de nuevo"
+    },
+    "homepage": {
+      "cta": {
+        "readyToStart": "¿Listo para Comenzar tu Aventura en Nepal?",
+        "joinThousands": "Únete a miles de viajeros que han descubierto las maravillas de Nepal con nuestros guías certificados. Tu viaje de una vida está a solo un clic de distancia.",
+        "bookGuideToday": "Reserva tu Guía Hoy",
+        "browseDestinations": "Explorar Destinos"
+      }
     }
   },
   "language": {

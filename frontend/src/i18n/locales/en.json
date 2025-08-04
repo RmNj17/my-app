@@ -609,7 +609,16 @@
       "viewDashboard": "View My Dashboard",
       "manageBookings": "Manage Bookings",
       "checkDashboard": "Check your dashboard for new booking requests and manage your tours.",
-      "continueAdventure": "Continue your Nepal adventure by booking amazing experiences with our certified guides."
+      "continueAdventure": "Continue your Nepal adventure by booking amazing experiences with our certified guides.",
+      "welcomeBack": "Welcome back"
+    },
+    "homepage": {
+      "cta": {
+        "readyToStart": "Ready to Start Your Nepal Adventure?",
+        "joinThousands": "Join thousands of travelers who've discovered Nepal's wonders with our certified guides. Your journey of a lifetime is just one click away.",
+        "bookGuideToday": "Book Your Guide Today",
+        "browseDestinations": "Browse Destinations"
+      }
     }
   },
   "language": {

@@ -329,7 +329,16 @@
       "viewDashboard": "查看我的仪表板",
       "manageBookings": "管理预订",
       "checkDashboard": "查看您的仪表板了解新的预订请求并管理您的旅行。",
-      "continueAdventure": "通过预订我们认证向导的精彩体验，继续您的尼泊尔冒险。"
+      "continueAdventure": "通过预订我们认证向导的精彩体验，继续您的尼泊尔冒险。",
+      "welcomeBack": "欢迎回来"
+    },
+    "homepage": {
+      "cta": {
+        "readyToStart": "准备好开始您的尼泊尔冒险了吗？",
+        "joinThousands": "加入数千名与我们认证向导一起发现尼泊尔奇迹的旅行者。您一生难忘的旅程仅需一键之遥。",
+        "bookGuideToday": "立即预订向导",
+        "browseDestinations": "浏览目的地"
+      }
     }
   },
   "language": {
