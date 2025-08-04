@@ -26,9 +26,12 @@ export default defineConfig({
   forceEntityConstructor: true,
   debug: process.env.NODE_ENV !== 'production',
   migrations: {
-    path: './migrations',
+    path:
+      process.env.NODE_ENV === 'production'
+        ? './dist/migrations'
+        : './migrations',
     pathTs: './migrations',
-    emit: 'ts',
+    emit: 'js',
   },
   driverOptions: {
     connection: {
