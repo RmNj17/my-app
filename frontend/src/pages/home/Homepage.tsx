@@ -54,13 +54,19 @@ const HomePage: React.FC = () => {
           {isAuthenticated ? (
             <>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                {t("pages.dashboard.welcomeBack")}, {user?.name?.split(" ")[0]}!
-                👋
+                {t("pages.dashboard.welcomeBack", "Welcome back")},{" "}
+                {user?.name?.split(" ")[0]}! 👋
               </h2>
               <p className="text-lg text-blue-100 mb-8 leading-relaxed">
                 {user?.role === "guide"
-                  ? t("pages.dashboard.checkDashboard")
-                  : t("pages.dashboard.continueAdventure")}
+                  ? t(
+                      "pages.dashboard.checkDashboard",
+                      "Check your dashboard for new booking requests and manage your tours."
+                    )
+                  : t(
+                      "pages.dashboard.continueAdventure",
+                      "Continue your Nepal adventure by booking amazing experiences with our certified guides."
+                    )}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -71,8 +77,8 @@ const HomePage: React.FC = () => {
                   icon={<UserOutlined />}
                 >
                   {user?.role === "guide"
-                    ? t("pages.dashboard.viewDashboard")
-                    : t("pages.dashboard.myBookings")}
+                    ? t("pages.dashboard.viewDashboard", "View My Dashboard")
+                    : t("pages.dashboard.myBookings", "My Bookings")}
                 </Button>
                 <Button
                   size="large"
@@ -84,17 +90,23 @@ const HomePage: React.FC = () => {
                 >
                   {user?.role === "guide"
                     ? t("pages.dashboard.exploreDest", "Explore Destinations")
-                    : t("pages.dashboard.findNewGuides")}
+                    : t("pages.dashboard.findNewGuides", "Find New Guides")}
                 </Button>
               </div>
             </>
           ) : (
             <>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                {t("homepage.cta.readyToStart")}
+                {t(
+                  "homepage.cta.readyToStart",
+                  "Ready to Start Your Nepal Adventure?"
+                )}
               </h2>
               <p className="text-lg text-blue-100 mb-8 leading-relaxed">
-                {t("homepage.cta.joinThousands")}
+                {t(
+                  "homepage.cta.joinThousands",
+                  "Join thousands of travelers who've discovered Nepal's wonders with our certified guides. Your journey of a lifetime is just one click away."
+                )}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -104,7 +116,7 @@ const HomePage: React.FC = () => {
                   onClick={() => navigate("/guides")}
                   icon={<CompassOutlined />}
                 >
-                  {t("homepage.cta.bookGuideToday")}
+                  {t("homepage.cta.bookGuideToday", "Book Your Guide Today")}
                 </Button>
                 <Button
                   size="large"
@@ -112,7 +124,7 @@ const HomePage: React.FC = () => {
                   icon={<EnvironmentOutlined />}
                   onClick={() => scrollToSection("destinations")}
                 >
-                  {t("homepage.cta.browseDestinations")}
+                  {t("homepage.cta.browseDestinations", "Browse Destinations")}
                 </Button>
               </div>
             </>
