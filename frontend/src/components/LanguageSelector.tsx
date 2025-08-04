@@ -1,9 +1,8 @@
 import React from "react";
-import { Select } from "antd";
+import { Dropdown } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
-
-const { Option } = Select;
+import type { MenuProps } from "antd";
 
 interface LanguageSelectorProps {
   className?: string;
@@ -12,8 +11,7 @@ interface LanguageSelectorProps {
 }
 
 const LanguageSelector: React.FC<LanguageSelectorProps> = ({
-  className,
-  size = "middle",
+  className="cursor-pointer",
   style,
 }) => {
   const { i18n, t } = useTranslation();
@@ -22,38 +20,63 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     i18n.changeLanguage(language);
   };
 
-  return (
-    <Select
-      value={i18n.language}
-      onChange={handleLanguageChange}
-      className={className}
-      style={style}
-      size={size}
-      suffixIcon={<GlobalOutlined />}
-      popupMatchSelectWidth={false}
-      placement="bottomRight"
-    >
-      <Option value="en">
+  const menuItems: MenuProps["items"] = [
+    {
+      key: "en",
+      label: (
         <span className="flex items-center gap-2">
           🇺🇸 {t("language.english")}
         </span>
-      </Option>
-      <Option value="ne">
+      ),
+      onClick: () => handleLanguageChange("en"),
+    },
+    {
+      key: "ne",
+      label: (
         <span className="flex items-center gap-2">
           🇳🇵 {t("language.nepali")}
         </span>
-      </Option>
-      <Option value="es">
+      ),
+      onClick: () => handleLanguageChange("ne"),
+    },
+    {
+      key: "es",
+      label: (
         <span className="flex items-center gap-2">
           🇪🇸 {t("language.spanish")}
         </span>
-      </Option>
-      <Option value="zh">
+      ),
+      onClick: () => handleLanguageChange("es"),
+    },
+    {
+      key: "zh",
+      label: (
         <span className="flex items-center gap-2">
           🇨🇳 {t("language.chinese")}
         </span>
-      </Option>
-    </Select>
+      ),
+      onClick: () => handleLanguageChange("zh"),
+    },
+  ];
+
+  const languageNames: Record<string, string> = {
+    en: "English",
+    ne: "नेपाली",
+    es: "Español",
+    zh: "中文",
+  };
+
+  return (
+    <Dropdown
+      menu={{ items: menuItems, selectedKeys: [i18n.language] }}
+      placement="bottomRight"
+      trigger={["hover"]}
+    >
+      <div className={className} style={style}>
+        <span>{languageNames[i18n.language] || i18n.language}</span>
+        <GlobalOutlined className="ml-2" />
+      </div>
+    </Dropdown>
   );
 };
 
