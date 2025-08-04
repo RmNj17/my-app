@@ -9,7 +9,7 @@ import {
 } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../store";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Hero from "../../components/Hero";
@@ -21,7 +21,7 @@ import Navigation from "../../components/Navigation";
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const { user } = useSelector((state: RootState) => state.auth);
   const isAuthenticated = !!user;
 

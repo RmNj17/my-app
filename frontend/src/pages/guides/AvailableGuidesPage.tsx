@@ -25,7 +25,7 @@ import {
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { getGuides } from "../../api/guides";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 const { Title, Text } = Typography;
 
@@ -44,7 +44,7 @@ const AvailableGuidesPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const token = localStorage.getItem("authToken");
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const userRole = user?.role;
