@@ -8,45 +8,42 @@ import {
   PhoneOutlined,
   HeartOutlined,
 } from "@ant-design/icons";
-
-const features = [
-  {
-    icon: <SafetyCertificateOutlined className="text-3xl text-blue-600" />,
-    title: "Certified Expert Guides",
-    description:
-      "All guides are government-certified, experienced, and background-checked for your complete safety and peace of mind.",
-  },
-  {
-    icon: <EnvironmentOutlined className="text-3xl text-green-600" />,
-    title: "Local Insider Knowledge",
-    description:
-      "Native guides with deep cultural knowledge and access to hidden gems off the beaten path.",
-  },
-  {
-    icon: <PhoneOutlined className="text-3xl text-purple-600" />,
-    title: "24/7 Customer Support",
-    description:
-      "Round-the-clock assistance and emergency support throughout your entire Nepal journey.",
-  },
-  {
-    icon: <HeartOutlined className="text-3xl text-red-600" />,
-    title: "Personalized Experiences",
-    description:
-      "Customized itineraries tailored to your interests, fitness level, and travel preferences.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Features: React.FC = () => {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: <SafetyCertificateOutlined className="text-3xl text-blue-600" />,
+      title: t("features.certified.title"),
+      description: t("features.certified.description"),
+    },
+    {
+      icon: <EnvironmentOutlined className="text-3xl text-green-600" />,
+      title: t("features.local.title"),
+      description: t("features.local.description"),
+    },
+    {
+      icon: <PhoneOutlined className="text-3xl text-purple-600" />,
+      title: t("features.support.title"),
+      description: t("features.support.description"),
+    },
+    {
+      icon: <HeartOutlined className="text-3xl text-red-600" />,
+      title: t("features.customized.title"),
+      description: t("features.customized.description"),
+    },
+  ];
   return (
     <section id="features" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose ExploreNepal?
+            {t("features.title")}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We're committed to providing you with the most authentic, safe, and
-            memorable Nepal experience possible.
+            {t("features.subtitle")}
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

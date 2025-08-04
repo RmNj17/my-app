@@ -2,45 +2,45 @@
 
 import type React from "react";
 import { Card, Rate, Badge, Avatar } from "antd";
-
-const testimonials = [
-  {
-    name: "Rajesh Shrestha",
-    country: "Nepal",
-    rating: 5,
-    text: "Our Everest Base Camp trek was absolutely incredible! Our guide Pemba was knowledgeable, friendly, and made sure we were safe every step of the way. The views were breathtaking and the cultural insights were invaluable.",
-    avatar: "/placeholder.svg?height=60&width=60",
-    trip: "Everest Base Camp Trek",
-  },
-  {
-    name: "Sita Gurung",
-    country: "Nepal",
-    rating: 5,
-    text: "The cultural tour of Kathmandu Valley exceeded all expectations. Our guide showed us hidden temples and local markets that we never would have found on our own. Truly authentic experience!",
-    avatar: "/placeholder.svg?height=60&width=60",
-    trip: "Kathmandu Cultural Tour",
-  },
-  {
-    name: "Binod Tamang",
-    country: "Nepal",
-    rating: 5,
-    text: "Perfect organization from start to finish. The Annapurna Circuit trek was challenging but our guide made it enjoyable and safe. The hospitality of the Nepalese people is unmatched!",
-    avatar: "/placeholder.svg?height=60&width=60",
-    trip: "Annapurna Circuit Trek",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Testimonials: React.FC = () => {
+  const { t } = useTranslation();
+
+  const testimonials = [
+    {
+      name: t("testimonials.testimonial1.name"),
+      country: t("testimonials.testimonial1.country"),
+      rating: 5,
+      text: t("testimonials.testimonial1.text"),
+      avatar: "/placeholder.svg?height=60&width=60",
+      trip: t("testimonials.testimonial1.trip"),
+    },
+    {
+      name: t("testimonials.testimonial2.name"),
+      country: t("testimonials.testimonial2.country"),
+      rating: 5,
+      text: t("testimonials.testimonial2.text"),
+      avatar: "/placeholder.svg?height=60&width=60",
+      trip: t("testimonials.testimonial2.trip"),
+    },
+    {
+      name: t("testimonials.testimonial3.name"),
+      country: t("testimonials.testimonial3.country"),
+      rating: 5,
+      text: t("testimonials.testimonial3.text"),
+      avatar: "/placeholder.svg?height=60&width=60",
+      trip: t("testimonials.testimonial3.trip"),
+    },
+  ];
   return (
     <section id="testimonials" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            What Our Travelers Say
+            {t("testimonials.title")}
           </h2>
-          <p className="text-lg text-gray-600">
-            Real stories from real adventures in Nepal
-          </p>
+          <p className="text-lg text-gray-600">{t("testimonials.subtitle")}</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (

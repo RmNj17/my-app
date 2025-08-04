@@ -8,9 +8,11 @@ import {
   InstagramOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -25,13 +27,10 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="col-span-2">
             <div className="text-2xl font-bold text-blue-400 mb-4">
-              🏔️ ExploreNepal
+               {t("hero.brandName")}
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Your trusted partner for authentic Nepal experiences. We connect
-              travelers with certified local guides for safe, memorable, and
-              culturally rich adventures across the beautiful landscapes of
-              Nepal.
+              {t("footer.description")}
             </p>
             <div className="flex space-x-3">
               <Button
@@ -56,7 +55,7 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">
-              Quick Links
+              {t("footer.quickLinks")}
             </h3>
             <ul className="space-y-3 text-gray-400">
               <li>
@@ -64,7 +63,7 @@ const Footer: React.FC = () => {
                   onClick={() => navigate("/about")}
                   className="hover:text-white transition-colors"
                 >
-                  About Us
+                  {t("navigation.about")}
                 </button>
               </li>
               <li>
@@ -72,7 +71,7 @@ const Footer: React.FC = () => {
                   onClick={() => navigate("/guides")}
                   className="hover:text-white transition-colors"
                 >
-                  Our Guides
+                  {t("navigation.guides")}
                 </button>
               </li>
               <li>
@@ -80,7 +79,7 @@ const Footer: React.FC = () => {
                   onClick={() => scrollToSection("destinations")}
                   className="hover:text-white transition-colors"
                 >
-                  Destinations
+                  {t("navigation.destinations")}
                 </button>
               </li>
               <li>
@@ -88,20 +87,22 @@ const Footer: React.FC = () => {
                   onClick={() => navigate("/contact")}
                   className="hover:text-white transition-colors"
                 >
-                  Contact Us
+                  {t("navigation.contact")}
                 </button>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Support</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">
+              {t("footer.support")}
+            </h3>
             <ul className="space-y-3 text-gray-400">
               <li>
                 <button
                   onClick={() => navigate("/help")}
                   className="hover:text-white transition-colors"
                 >
-                  Help Center
+                  {t("footer.helpCenter")}
                 </button>
               </li>
               <li>
@@ -109,7 +110,7 @@ const Footer: React.FC = () => {
                   onClick={() => navigate("/safety")}
                   className="hover:text-white transition-colors"
                 >
-                  Safety Guidelines
+                  {t("footer.safetyGuidelines")}
                 </button>
               </li>
               <li>
@@ -117,7 +118,7 @@ const Footer: React.FC = () => {
                   onClick={() => navigate("/terms")}
                   className="hover:text-white transition-colors"
                 >
-                  Terms of Service
+                  {t("footer.termsOfService")}
                 </button>
               </li>
               <li>
@@ -125,7 +126,7 @@ const Footer: React.FC = () => {
                   onClick={() => navigate("/privacy")}
                   className="hover:text-white transition-colors"
                 >
-                  Privacy Policy
+                  {t("footer.privacyPolicy")}
                 </button>
               </li>
             </ul>
@@ -133,7 +134,8 @@ const Footer: React.FC = () => {
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} ExploreNepal. All rights reserved
+            &copy; {new Date().getFullYear()} {t("hero.brandName")}.{" "}
+            {t("footer.rights")}
           </p>
         </div>
       </div>

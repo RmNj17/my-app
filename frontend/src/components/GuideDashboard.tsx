@@ -23,6 +23,7 @@ import {
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { getBookings, updateBookingStatus } from "../api/bookings";
+import { useTranslation } from "react-i18next";
 
 const { Title, Text } = Typography;
 
@@ -38,20 +39,21 @@ const GuideDashboard: React.FC = () => {
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const token = localStorage.getItem("authToken");
 
   useEffect(() => {
     if (token) {
       fetchBookings();
     } else {
-      message.error("No valid token found");
+      message.error(t("dashboard.common.noValidToken"));
       navigate("/login");
     }
   }, [token]);
 
   const fetchBookings = async () => {
     if (!token) {
-      message.error("No valid token found");
+      message.error(t("dashboard.common.noValidToken"));
       return;
     }
     try {
@@ -59,7 +61,7 @@ const GuideDashboard: React.FC = () => {
       const response = await getBookings(token);
       setBookings(response);
     } catch (error) {
-      message.error("Failed to load bookings");
+      message.error(t("dashboard.failedToLoadBookings"));
     } finally {
       setLoading(false);
     }
@@ -67,16 +69,16 @@ const GuideDashboard: React.FC = () => {
 
   const handleStatusChange = async (id: string, status: string) => {
     if (!token) {
-      message.error("No valid token found");
+      message.error(t("dashboard.noValidToken"));
       return;
     }
     try {
       setLoading(true);
       await updateBookingStatus(id, status, token);
       await fetchBookings();
-      message.success(`Booking ${status} successfully!`);
+      message.success(t("dashboard.bookingStatusUpdated", { status }));
     } catch (error) {
-      message.error("Failed to update booking status");
+      message.error(t("dashboard.failedToUpdateStatus"));
     } finally {
       setLoading(false);
     }
@@ -105,7 +107,7 @@ const GuideDashboard: React.FC = () => {
 
   const columns = [
     {
-      title: "Tourist",
+      title: t("dashboard.tourist"),
       dataIndex: "touristName",
       key: "touristName",
       render: (name: string) => (
@@ -120,7 +122,7 @@ const GuideDashboard: React.FC = () => {
       ),
     },
     {
-      title: "Tour Date",
+      title: t("dashboard.tourDate"),
       dataIndex: "date",
       key: "date",
       render: (date: string) => (
@@ -133,7 +135,7 @@ const GuideDashboard: React.FC = () => {
       ),
     },
     {
-      title: "Message",
+      title: t("dashboard.message"),
       dataIndex: "message",
       key: "message",
       render: (message: string) => (
@@ -146,7 +148,7 @@ const GuideDashboard: React.FC = () => {
       ),
     },
     {
-      title: "Status",
+      title: t("dashboard.status"),
       dataIndex: "status",
       key: "status",
       render: (status: string) => (
@@ -154,7 +156,7 @@ const GuideDashboard: React.FC = () => {
       ),
     },
     {
-      title: "Actions",
+      title: t("dashboard.actions"),
       key: "action",
       render: (_: any, record: Booking) => (
         <Space>
@@ -167,7 +169,7 @@ const GuideDashboard: React.FC = () => {
                 onClick={() => handleStatusChange(record.id, "accepted")}
                 className="bg-green-600 hover:bg-green-700 border-green-600 rounded-lg"
               >
-                Accept
+                {t("dashboard.accept")}
               </Button>
               <Button
                 danger
@@ -176,17 +178,17 @@ const GuideDashboard: React.FC = () => {
                 onClick={() => handleStatusChange(record.id, "rejected")}
                 className="rounded-lg"
               >
-                Reject
+                {t("dashboard.reject")}
               </Button>
             </>
           )}
           <Button
             size="small"
             icon={<EyeOutlined />}
-            onClick={() => message.info("View details feature coming soon!")}
+            onClick={() => message.info(t("dashboard.viewDetailsComingSoon"))}
             className="rounded-lg"
           >
-            View
+            {t("dashboard.view")}
           </Button>
         </Space>
       ),
@@ -195,22 +197,22 @@ const GuideDashboard: React.FC = () => {
 
   const stats = [
     {
-      title: "Total Requests",
+      title: t("dashboard.totalRequests"),
       value: bookings.length,
       color: "blue",
     },
     {
-      title: "Pending",
+      title: t("dashboard.pending"),
       value: bookings.filter((b) => b.status === "pending").length,
       color: "orange",
     },
     {
-      title: "Accepted",
+      title: t("dashboard.accepted"),
       value: bookings.filter((b) => b.status === "accepted").length,
       color: "green",
     },
     {
-      title: "Completed",
+      title: t("dashboard.completed"),
       value: bookings.filter((b) => b.status === "completed").length,
       color: "purple",
     },
@@ -224,10 +226,10 @@ const GuideDashboard: React.FC = () => {
           <div className="flex items-center justify-between">
             <div>
               <Title level={2} className="mb-2 text-gray-800">
-                Guide Dashboard
+                {t("dashboard.guideDashboard")}
               </Title>
               <Text className="text-gray-600">
-                Manage your tour booking requests
+                {t("dashboard.manageTourRequests")}
               </Text>
             </div>
             <Button
@@ -236,7 +238,7 @@ const GuideDashboard: React.FC = () => {
               onClick={() => navigate("/")}
               className="bg-blue-600 hover:bg-blue-700 rounded-lg"
             >
-              Back to Home
+              {t("navigation.backToHome")}
             </Button>
           </div>
         </div>
@@ -262,12 +264,13 @@ const GuideDashboard: React.FC = () => {
               </div>
               <div>
                 <Title level={5} className="mb-1 text-orange-800">
-                  You have{" "}
-                  {bookings.filter((b) => b.status === "pending").length}{" "}
-                  pending booking request(s)
+                  {t("dashboard.pendingRequestAlert", {
+                    count: bookings.filter((b) => b.status === "pending")
+                      .length,
+                  })}
                 </Title>
                 <Text className="text-orange-700">
-                  Review and respond to tourist requests below
+                  {t("dashboard.reviewRespond")}
                 </Text>
               </div>
             </div>
@@ -278,10 +281,10 @@ const GuideDashboard: React.FC = () => {
         <Card className="shadow-md border-0">
           <div className="mb-6">
             <Title level={4} className="text-gray-800">
-              Booking Requests
+              {t("dashboard.bookingRequests")}
             </Title>
             <Text className="text-gray-600">
-              View and manage all tour booking requests
+              {t("dashboard.viewManageRequests")}
             </Text>
           </div>
 
@@ -297,7 +300,9 @@ const GuideDashboard: React.FC = () => {
               showSizeChanger: true,
               showQuickJumper: true,
               showTotal: (total, range) =>
-                `${range[0]}-${range[1]} of ${total} requests`,
+                `${range[0]}-${range[1]} ${t("dashboard.of")} ${total} ${t(
+                  "dashboard.requests"
+                )}`,
             }}
             className="rounded-lg"
             scroll={{ x: 900 }}
@@ -311,11 +316,10 @@ const GuideDashboard: React.FC = () => {
               <CalendarOutlined style={{ fontSize: "48px" }} />
             </div>
             <Title level={4} className="text-gray-600 mb-4">
-              No booking requests yet
+              {t("dashboard.noRequestsYet")}
             </Title>
             <Text className="text-gray-500 mb-6 block">
-              When tourists book your guide services, their requests will appear
-              here
+              {t("dashboard.whenTouristsBook")}
             </Text>
             <Button
               type="primary"
@@ -323,7 +327,7 @@ const GuideDashboard: React.FC = () => {
               onClick={() => navigate("/")}
               className="bg-blue-600 hover:bg-blue-700 rounded-lg"
             >
-              Back to Home
+              {t("navigation.backToHome")}
             </Button>
           </Card>
         )}

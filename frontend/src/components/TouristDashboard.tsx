@@ -22,6 +22,7 @@ import {
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { getBookings, cancelBooking } from "../api/bookings";
+import { useTranslation } from "react-i18next";
 
 const { Title, Text } = Typography;
 
@@ -37,13 +38,14 @@ const TouristDashboard: React.FC = () => {
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const token = localStorage.getItem("authToken");
 
   useEffect(() => {
     if (token) {
       fetchBookings();
     } else {
-      message.error("No valid token found");
+      message.error(t("dashboard.common.noValidToken"));
       navigate("/login");
     }
   }, [token]);
@@ -57,7 +59,7 @@ const TouristDashboard: React.FC = () => {
       const response = await getBookings(token);
       setBookings(response);
     } catch (error) {
-      message.error("Failed to load bookings");
+      message.error(t("dashboard.common.failedToLoadBookings"));
     } finally {
       setLoading(false);
     }
@@ -65,16 +67,16 @@ const TouristDashboard: React.FC = () => {
 
   const handleCancelBooking = async (id: string) => {
     if (!token) {
-      message.error("No valid token found");
+      message.error(t("dashboard.common.noValidToken"));
       return;
     }
     try {
       setLoading(true);
       await cancelBooking(id, token);
       await fetchBookings();
-      message.success("Booking cancelled successfully!");
+      message.success(t("dashboard.common.bookingCancelledSuccess"));
     } catch (error) {
-      message.error("Failed to cancel booking");
+      message.error(t("dashboard.common.failedToCancelBooking"));
     } finally {
       setLoading(false);
     }
@@ -101,7 +103,7 @@ const TouristDashboard: React.FC = () => {
 
   const columns = [
     {
-      title: "Guide",
+      title: t("guides.guide"),
       dataIndex: "guideName",
       key: "guideName",
       render: (name: string) => (
@@ -116,7 +118,7 @@ const TouristDashboard: React.FC = () => {
       ),
     },
     {
-      title: "Tour Date",
+      title: t("dashboard.common.tourDate"),
       dataIndex: "date",
       key: "date",
       render: (date: string) => (
@@ -129,7 +131,7 @@ const TouristDashboard: React.FC = () => {
       ),
     },
     {
-      title: "Message",
+      title: t("dashboard.common.message"),
       dataIndex: "message",
       key: "message",
       render: (message: string) => (
@@ -142,7 +144,7 @@ const TouristDashboard: React.FC = () => {
       ),
     },
     {
-      title: "Status",
+      title: t("dashboard.common.status"),
       dataIndex: "status",
       key: "status",
       render: (status: string) => (
@@ -150,7 +152,7 @@ const TouristDashboard: React.FC = () => {
       ),
     },
     {
-      title: "Actions",
+      title: t("dashboard.common.actions"),
       key: "action",
       render: (_: any, record: Booking) => (
         <Space>
@@ -162,16 +164,18 @@ const TouristDashboard: React.FC = () => {
               onClick={() => handleCancelBooking(record.id)}
               className="rounded-lg"
             >
-              Cancel
+              {t("dashboard.common.cancel")}
             </Button>
           )}
           <Button
             size="small"
             icon={<EyeOutlined />}
-            onClick={() => message.info("View details feature coming soon!")}
+            onClick={() =>
+              message.info(t("dashboard.common.viewDetailsComingSoon"))
+            }
             className="rounded-lg"
           >
-            View
+            {t("dashboard.common.view")}
           </Button>
         </Space>
       ),
@@ -180,22 +184,22 @@ const TouristDashboard: React.FC = () => {
 
   const stats = [
     {
-      title: "Total Bookings",
+      title: t("dashboard.common.totalBookings"),
       value: bookings.length,
       color: "blue",
     },
     {
-      title: "Pending",
+      title: t("dashboard.common.pending"),
       value: bookings.filter((b) => b.status === "pending").length,
       color: "orange",
     },
     {
-      title: "Confirmed",
+      title: t("dashboard.common.confirmed"),
       value: bookings.filter((b) => b.status === "confirmed").length,
       color: "green",
     },
     {
-      title: "Completed",
+      title: t("dashboard.common.completed"),
       value: bookings.filter((b) => b.status === "completed").length,
       color: "purple",
     },
@@ -209,10 +213,10 @@ const TouristDashboard: React.FC = () => {
           <div className="flex items-center justify-between">
             <div>
               <Title level={2} className="mb-2 text-gray-800">
-                My Bookings
+                {t("dashboard.common.myBookings")}
               </Title>
               <Text className="text-gray-600">
-                Manage your Nepal tour bookings
+                {t("dashboard.common.manageNepalBookings")}
               </Text>
             </div>
             <Button
@@ -221,7 +225,7 @@ const TouristDashboard: React.FC = () => {
               onClick={() => navigate("/")}
               className="bg-blue-600 hover:bg-blue-700 rounded-lg"
             >
-              Back to Home
+              {t("navigation.backToHome")}
             </Button>
           </div>
         </div>
@@ -242,10 +246,10 @@ const TouristDashboard: React.FC = () => {
         <Card className="shadow-md border-0">
           <div className="mb-6">
             <Title level={4} className="text-gray-800">
-              Booking History
+              {t("dashboard.common.bookingHistory")}
             </Title>
             <Text className="text-gray-600">
-              View and manage all your tour bookings
+              {t("dashboard.common.viewManageBookings")}
             </Text>
           </div>
 
@@ -261,7 +265,9 @@ const TouristDashboard: React.FC = () => {
               showSizeChanger: true,
               showQuickJumper: true,
               showTotal: (total, range) =>
-                `${range[0]}-${range[1]} of ${total} bookings`,
+                `${range[0]}-${range[1]} ${t(
+                  "dashboard.common.of"
+                )} ${total} ${t("dashboard.common.bookings")}`,
             }}
             className="rounded-lg"
             scroll={{ x: 800 }}
@@ -275,10 +281,10 @@ const TouristDashboard: React.FC = () => {
               <CalendarOutlined style={{ fontSize: "48px" }} />
             </div>
             <Title level={4} className="text-gray-600 mb-4">
-              No bookings yet
+              {t("dashboard.common.noBookingsYet")}
             </Title>
             <Text className="text-gray-500 mb-6 block">
-              Start your Nepal adventure by booking an expert guide
+              {t("dashboard.common.startNepalAdventure")}
             </Text>
             <Button
               type="primary"
@@ -286,7 +292,7 @@ const TouristDashboard: React.FC = () => {
               onClick={() => navigate("/guides")}
               className="bg-blue-600 hover:bg-blue-700 rounded-lg"
             >
-              Browse Guides
+              {t("dashboard.common.browseGuides")}
             </Button>
           </Card>
         )}

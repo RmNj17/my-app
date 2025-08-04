@@ -2,9 +2,11 @@ import type React from "react";
 import { Button } from "antd";
 import { CompassOutlined, CameraOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Hero: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -26,13 +28,11 @@ const Hero: React.FC = () => {
         data-aos="fade-up"
       >
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          Discover the Magic of
-          <span className="block text-blue-400 mt-2">Nepal</span>
+          {t("hero.title")}
+          <span className="block text-blue-400 mt-2">{t("hero.subtitle")}</span>
         </h1>
         <p className="mt-4 text-lg md:text-xl lg:text-2xl max-w-4xl leading-relaxed text-gray-100">
-          From the towering Himalayas to ancient temples, embark on
-          unforgettable adventures with certified local guides who know every
-          hidden treasure.
+          {t("hero.description")}
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <Button
@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
             onClick={() => navigate("/guides")}
             icon={<CompassOutlined />}
           >
-            Find Your Perfect Guide
+            {t("hero.findGuide")}
           </Button>
           <Button
             size="large"
@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
             icon={<CameraOutlined />}
             onClick={() => scrollToSection("destinations")}
           >
-            Explore Destinations
+            {t("hero.exploreDestinations")}
           </Button>
         </div>
       </div>
