@@ -52,6 +52,7 @@
     "profilePicture": "Profile Picture",
     "guideLicense": "Guide License",
     "uploadLicense": "Upload Guide License",
+    "loginRequired": "You must be logged in to view this page",
     "uploadProfile": "Upload Profile Picture",
     "termsAgree": "By creating an account, you agree to our Terms of Service and Privacy Policy",
     "loginAgree": "By signing in, you agree to our Terms of Service and Privacy Policy",
@@ -527,7 +528,17 @@
     "bookNow": "Book Now",
     "contactGuide": "Contact Guide",
     "specialties": "Specialties",
-    "languages": "Languages"
+    "languages": "Languages",
+    "certified": "Certified",
+    "certifiedGuide": "Certified Guide",
+    "accessDenied": "Guides cannot access this page",
+    "failedToLoad": "Failed to load guides",
+    "adminManagement": "Admin guide management coming soon!",
+    "manageGuides": "Manage Guides",
+    "adminDescription": "View and manage all registered guides",
+    "guidesAvailable": "Available Guides",
+    "manageGuide": "Manage Guide",
+    "bookThisGuide": "Book This Guide"
   },
   "common": {
     "loading": "Loading...",
@@ -549,8 +560,9 @@
   },
   "pages": {
     "availableGuides": {
-      "title": "Find Your Perfect Guide",
-      "subtitle": "Connect with experienced local experts",
+      "title": "Available Guides",
+      "subtitle": "Find and book your perfect Nepal guide",
+      "searchGuides": "Search Guides",
       "searchPlaceholder": "Search by guide name...",
       "noGuides": "No guides found",
       "loading": "Loading guides...",
@@ -565,17 +577,28 @@
       "subtitle": "Send a booking request with your preferred date and message",
       "guideInfo": "Guide Information",
       "bookingForm": "Booking Form",
+      "bookingDetails": "Booking Details",
       "selectDate": "Select Date",
+      "preferredDate": "Preferred Tour Date",
       "message": "Message",
-      "messagePlaceholder": "Tell us about your travel plans and preferences...",
+      "messageToGuide": "Message to Guide",
+      "messagePlaceholder": "Tell the guide about your tour preferences, group size, experience level, and any special requirements...",
       "bookingTips": "Booking Tips",
-      "tip1": "Be specific about your travel dates and preferences",
-      "tip2": "Mention any special requirements or interests",
-      "tip3": "Our guides will respond within 24 hours",
+      "tip1": "Select your preferred tour date",
+      "tip2": "Include details about your interests and experience level",
+      "tip3": "Mention group size and any special requirements",
+      "tip4": "The guide will respond within 24 hours",
       "sendRequest": "Send Booking Request",
-      "sending": "Sending...",
+      "sending": "Sending Request...",
       "dateRequired": "Please select a date",
-      "messageRequired": "Please enter a message"
+      "messageRequired": "Please enter a message",
+      "dateAndMessageRequired": "Please select a date and enter a message",
+      "guideIdMissing": "Guide ID is missing",
+      "bookingSuccess": "Booking request sent successfully!",
+      "bookingError": "Failed to send booking request",
+      "errorLoadingGuide": "Failed to load guide details",
+      "loadingGuide": "Loading guide details...",
+      "requestInfo": "Your request will be sent directly to the guide"
     },
     "dashboard": {
       "myBookings": "My Bookings",
@@ -592,6 +615,8 @@
   "language": {
     "english": "English",
     "nepali": "नेपाली",
+    "spanish": "Español",
+    "chinese": "中文",
     "switchLanguage": "Switch Language"
   }
 }
