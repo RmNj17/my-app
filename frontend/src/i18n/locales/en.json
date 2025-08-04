@@ -1,631 +1,703 @@
 {
-  "hero": {
-    "title": "Discover the Magic of",
-    "subtitle": "Nepal",
-    "description": "From the towering Himalayas to ancient temples, embark on unforgettable adventures with certified local guides who know every hidden treasure.",
-    "findGuide": "Find Your Perfect Guide",
-    "exploreDestinations": "Explore Destinations",
-    "brandName": "Ghumante Nepal"
-  },
-  "navigation": {
-    "home": "Home",
-    "guides": "Guides",
-    "destinations": "Destinations",
-    "about": "About",
-    "contact": "Contact Us",
-    "login": "Login",
-    "signup": "Sign Up",
-    "dashboard": "Dashboard",
-    "logout": "Logout",
-    "whyChooseUs": "Why Choose Us",
-    "reviews": "Reviews",
-    "tagline": "Explore • Adventure • Culture",
-    "backToHome": "Back to Home",
-    "backToLogin": "Back to Login",
-    "backToGuides": "Back to Guides"
-  },
-  "auth": {
-    "login": "Login",
-    "signup": "Sign Up",
-    "email": "Email",
-    "password": "Password",
-    "confirmPassword": "Confirm Password",
-    "name": "Name",
-    "phone": "Phone Number",
-    "loginButton": "Login",
-    "signupButton": "Sign Up",
-    "touristSignup": "Tourist Sign Up",
-    "guideSignup": "Guide Sign Up",
-    "alreadyAccount": "Already have an account?",
-    "noAccount": "Don't have an account? Create one:",
-    "signupAs": "Sign up as",
-    "tourist": "Tourist",
-    "guide": "Guide",
-    "welcomeBack": "Welcome Back",
-    "signInDescription": "Sign in to continue your Nepal adventure",
-    "joinAsGuide": "Join as Guide",
-    "joinAsTourist": "Join as Tourist",
-    "startYourAdventure": "Start Your Adventure",
-    "becomeAGuide": "Become a Guide",
-    "createAccount": "Create Your Account",
-    "profileSetup": "Profile Setup",
-    "profilePicture": "Profile Picture",
-    "guideLicense": "Guide License",
-    "uploadLicense": "Upload Guide License",
-    "loginRequired": "You must be logged in to view this page",
-    "uploadProfile": "Upload Profile Picture",
-    "termsAgree": "By creating an account, you agree to our Terms of Service and Privacy Policy",
-    "loginAgree": "By signing in, you agree to our Terms of Service and Privacy Policy",
-    "signupSuccess": "Account created successfully! Please login.",
-    "signupError": "Signup failed. Please try again.",
-    "personalInfo": "Personal Information",
-    "fullName": "Full Name",
-    "enterFullName": "Enter your full name",
-    "pleaseEnterName": "Please enter your full name",
-    "emailAddress": "Email Address",
-    "pleaseEnterEmail": "Please enter your email",
-    "validEmail": "Please enter a valid email",
-    "phoneNumber": "Phone Number",
-    "pleaseEnterPhone": "Please enter your phone number",
-    "pleaseEnterPassword": "Please enter a password",
-    "passwordMinLength": "Password must be at least 6 characters",
-    "createPassword": "Create a strong password",
-    "creatingAccount": "Creating Account...",
-    "createTouristAccount": "Create Tourist Account",
-    "loginHere": "Login here",
-    "becomeGuideInstead": "Want to become a guide instead?",
-    "signupAsGuide": "Sign up as Guide",
-    "completeProfile": "Complete your profile",
-    "backToLogin": "Back to Login",
-    "personalInformation": "Personal Information",
-    "requiredDocuments": "Required Documents",
-    "uploadGuideLicense": "Please upload your guide license",
-    "dragLicense": "Click or drag your license document here (PDF, JPG, PNG)",
-    "dragPhoto": "Click or drag your photo here (JPG, PNG)",
-    "createGuideAccount": "Create Guide Account",
-    "shareExpertise": "Share your local expertise and earn money",
-    "optional": "Optional",
-    "signInContinue": "Sign in to continue your Nepal adventure",
-    "emailPlaceholder": "example@email.com",
-    "passwordPlaceholder": "••••••••",
-    "emailRequired": "Please enter your email",
-    "emailInvalid": "Enter a valid email",
-    "passwordRequired": "Password is required",
-    "signingIn": "Signing In...",
-    "asTourist": "As Tourist",
-    "asGuide": "As Guide",
-    "agreeTerms": "By signing in, you agree to our Terms of Service and Privacy Policy",
-    "loginSuccess": "Login successful!",
-    "loginError": "Login failed. Please try again."
-  },
-  "dashboard": {
-    "common": {
-      "noValidToken": "No valid token found",
-      "failedToLoadBookings": "Failed to load bookings",
-      "bookingCancelledSuccess": "Booking cancelled successfully!",
-      "failedToCancelBooking": "Failed to cancel booking",
-      "tourDate": "Tour Date",
-      "message": "Message",
-      "status": "Status",
-      "actions": "Actions",
-      "cancel": "Cancel",
-      "view": "View",
-      "accept": "Accept",
-      "reject": "Reject",
-      "viewDetailsComingSoon": "View details feature coming soon!",
-      "totalBookings": "Total Bookings",
-      "totalRequests": "Total Requests",
-      "pending": "Pending",
-      "confirmed": "Confirmed",
-      "accepted": "Accepted",
-      "completed": "Completed",
-      "myBookings": "My Bookings",
-      "manageNepalBookings": "Manage your Nepal tour bookings",
-      "guideDashboard": "Guide Dashboard",
-      "manageTourRequests": "Manage your tour booking requests",
-      "bookingHistory": "Booking History",
-      "bookingRequests": "Booking Requests",
-      "viewManageBookings": "View and manage all your tour bookings",
-      "viewManageRequests": "View and manage all tour booking requests",
-      "of": "of",
-      "bookings": "bookings",
-      "requests": "requests",
-      "noBookingsYet": "No bookings yet",
-      "noRequestsYet": "No booking requests yet",
-      "startNepalAdventure": "Start your Nepal adventure by booking an expert guide",
-      "whenTouristsBook": "When tourists book your guide services, their requests will appear here",
-      "browseGuides": "Browse Guides",
-      "pendingRequestAlert": "You have {count} pending booking request(s)",
-      "reviewRespond": "Review and respond to tourist requests below",
-      "bookingStatusUpdated": "Booking {status} successfully!",
-      "failedToUpdateStatus": "Failed to update booking status"
+    "hero": {
+        "title": "Discover the Magic of",
+        "subtitle": "Nepal",
+        "description": "From the towering Himalayas to ancient temples, embark on unforgettable adventures with certified local guides who know every hidden treasure.",
+        "findGuide": "Find Your Perfect Guide",
+        "exploreDestinations": "Explore Destinations",
+        "brandName": "Ghumante Nepal"
     },
-    "welcome": "Welcome",
-    "bookings": "Bookings",
-    "profile": "Profile",
-    "guides": "Guides",
-    "users": "Users",
-    "stats": "Statistics",
-    "activeGuides": "Active Guides",
-    "totalUsers": "Total Users",
-    "revenue": "Revenue",
-    "recentBookings": "Recent Bookings",
-    "date": "Date",
-    "cancelled": "Cancelled"
-  },
-  "destinations": {
-    "title": "Popular Destinations",
-    "subtitle": "Explore Nepal's most breathtaking locations",
-    "clickToExplore": "Click to explore",
-    "toursAvailable": "tours available",
-    "pokhara": {
-      "name": "Pokhara",
-      "description": "Gateway to the Annapurnas with pristine lakes and stunning mountain views",
-      "detailedDescription": "Pokhara, Nepal's adventure capital, sits majestically beside the tranquil Phewa Lake with the dramatic Annapurna range forming a stunning backdrop. This enchanting city offers the perfect blend of natural beauty, adventure activities, and cultural experiences. From paragliding over the valley to exploring ancient temples and caves, Pokhara provides unforgettable memories for every type of traveler.",
-      "bestTimeToVisit": "October to December, March to May",
-      "duration": "3-7 days",
-      "difficulty": "Easy",
-      "priceRange": "$50-150 per day",
-      "highlights": {
-        "0": "Phewa Lake",
-        "1": "Annapurna Range",
-        "2": "Adventure Sports"
-      },
-      "activities": {
-        "0": "Paragliding",
-        "1": "Boating on Phewa Lake",
-        "2": "Sarangkot Sunrise",
-        "3": "World Peace Pagoda",
-        "4": "Devi's Fall",
-        "5": "Gupteshwor Cave",
-        "6": "Mountain Biking",
-        "7": "Zip-lining"
-      },
-      "included": {
-        "0": "Professional guide",
-        "1": "Transportation",
-        "2": "Entrance fees",
-        "3": "Safety equipment"
-      },
-      "excluded": {
-        "0": "Meals",
-        "1": "Accommodation",
-        "2": "Personal expenses",
-        "3": "Travel insurance"
-      },
-      "requirements": {
-        "0": "Comfortable walking shoes",
-        "1": "Sun protection",
-        "2": "Camera",
-        "3": "Light jacket"
-      },
-      "facts": {
-        "altitude": { "label": "Altitude", "value": "822m" },
-        "population": { "label": "Population", "value": "518,000" },
-        "lakeArea": { "label": "Lake Area", "value": "5.23 km²" },
-        "founded": { "label": "Founded", "value": "1786" }
-      }
+    "navigation": {
+        "home": "Home",
+        "guides": "Guides",
+        "destinations": "Destinations",
+        "about": "About",
+        "contact": "Contact Us",
+        "login": "Login",
+        "signup": "Sign Up",
+        "dashboard": "Dashboard",
+        "logout": "Logout",
+        "whyChooseUs": "Why Choose Us",
+        "reviews": "Reviews",
+        "tagline": "Explore • Adventure • Culture",
+        "backToHome": "Back to Home",
+        "backToLogin": "Back to Login",
+        "backToGuides": "Back to Guides"
     },
-    "kathmandu": {
-      "name": "Kathmandu",
-      "description": "Ancient temples, vibrant markets, and rich cultural heritage",
-      "detailedDescription": "Kathmandu, the vibrant capital of Nepal, is a living museum where ancient traditions seamlessly blend with modern life. The city is home to seven UNESCO World Heritage Sites, bustling markets, and some of the most sacred Hindu and Buddhist temples in the world. Every corner tells a story of centuries-old craftsmanship, spiritual devotion, and cultural richness that continues to thrive today.",
-      "bestTimeToVisit": "October to December, February to April",
-      "duration": "2-5 days",
-      "difficulty": "Easy",
-      "priceRange": "$40-120 per day",
-      "highlights": {
-        "0": "Durbar Square",
-        "1": "Swayambhunath",
-        "2": "Thamel District"
-      },
-      "activities": {
-        "0": "Durbar Square Tour",
-        "1": "Swayambhunath Temple",
-        "2": "Boudhanath Stupa",
-        "3": "Pashupatinath Temple",
-        "4": "Thamel Shopping",
-        "5": "Cooking Classes",
-        "6": "Cultural Shows",
-        "7": "Art Galleries"
-      },
-      "included": {
-        "0": "Expert cultural guide",
-        "1": "Temple entrance fees",
-        "2": "Traditional lunch",
-        "3": "Cultural performance"
-      },
-      "excluded": {
-        "0": "Hotel pickup",
-        "1": "Personal shopping",
-        "2": "Tips",
-        "3": "Additional meals"
-      },
-      "requirements": {
-        "0": "Respectful clothing",
-        "1": "Comfortable shoes",
-        "2": "Scarf for temples",
-        "3": "Small backpack"
-      },
-      "facts": {
-        "altitude": { "label": "Altitude", "value": "1,400m" },
-        "population": { "label": "Population", "value": "1.4 million" },
-        "unescoSites": { "label": "UNESCO Sites", "value": "7" },
-        "founded": { "label": "Founded", "value": "723 AD" }
-      }
-    },
-    "everest": {
-      "name": "Mount Everest",
-      "description": "World's highest peak and the ultimate trekking adventure",
-      "detailedDescription": "Mount Everest, standing at 8,848.86 meters, represents the ultimate adventure for trekkers worldwide. The journey to Everest Base Camp is not just about reaching a destination; it's about experiencing the incredible Sherpa culture, witnessing breathtaking Himalayan vistas, and pushing your personal limits. This life-changing trek takes you through diverse landscapes, from lush forests to glacial moraines, while offering unparalleled mountain views.",
-      "bestTimeToVisit": "March to May, September to November",
-      "duration": "12-16 days",
-      "difficulty": "Challenging",
-      "priceRange": "$1,200-2,500 total",
-      "highlights": {
-        "0": "Base Camp Trek",
-        "1": "Sherpa Culture",
-        "2": "Himalayan Views"
-      },
-      "activities": {
-        "0": "Base Camp Trekking",
-        "1": "Sherpa Village Visits",
-        "2": "Monastery Tours",
-        "3": "Acclimatization Hikes",
-        "4": "Photography Tours",
-        "5": "Cultural Immersion",
-        "6": "Mountain Views",
-        "7": "Glacier Exploration"
-      },
-      "included": {
-        "0": "Experienced Sherpa guide",
-        "1": "Porter service",
-        "2": "All permits",
-        "3": "Accommodation in teahouses"
-      },
-      "excluded": {
-        "0": "International flights",
-        "1": "Kathmandu hotels",
-        "2": "Personal gear",
-        "3": "Emergency evacuation insurance"
-      },
-      "requirements": {
-        "0": "Good physical fitness",
-        "1": "Trekking experience",
-        "2": "Proper gear",
-        "3": "Travel insurance"
-      },
-      "facts": {
-        "height": { "label": "Height", "value": "8,848.86m" },
-        "baseCampAlt": { "label": "Base Camp Alt.", "value": "5,364m" },
-        "firstAscent": { "label": "First Ascent", "value": "1953" },
-        "successRate": { "label": "Success Rate", "value": "60%" }
-      }
-    },
-    "lumbini": {
-      "name": "Lumbini",
-      "description": "Sacred birthplace of Buddha and spiritual pilgrimage site",
-      "detailedDescription": "Lumbini, the birthplace of Lord Buddha, is one of the most sacred pilgrimage sites for Buddhists worldwide. This UNESCO World Heritage Site offers a profound spiritual experience with its peaceful gardens, ancient ruins, and modern monasteries built by Buddhist communities from around the world. The site provides a unique opportunity to explore Buddhist philosophy, meditation practices, and the life of Siddhartha Gautama.",
-      "bestTimeToVisit": "October to March",
-      "duration": "1-3 days",
-      "difficulty": "Easy",
-      "priceRange": "$30-80 per day",
-      "highlights": {
-        "0": "Maya Devi Temple",
-        "1": "Peace Pagoda",
-        "2": "Monasteries"
-      },
-      "activities": {
-        "0": "Maya Devi Temple Visit",
-        "1": "Meditation Sessions",
-        "2": "Monastery Tours",
-        "3": "Peace Pagoda",
-        "4": "Archaeological Sites",
-        "5": "Buddhist Philosophy Classes",
-        "6": "Spiritual Walks",
-        "7": "Cultural Programs"
-      },
-      "included": {
-        "0": "Spiritual guide",
-        "1": "Temple access",
-        "2": "Meditation session",
-        "3": "Cultural presentation"
-      },
-      "excluded": {
-        "0": "Accommodation",
-        "1": "Meals",
-        "2": "Transportation",
-        "3": "Personal donations"
-      },
-      "requirements": {
-        "0": "Respectful attire",
-        "1": "Quiet demeanor",
-        "2": "Open mind",
-        "3": "Comfortable shoes"
-      },
-      "facts": {
-        "founded": { "label": "Founded", "value": "563 BC" },
-        "area": { "label": "Area", "value": "1.55 km²" },
-        "monasteries": { "label": "Monasteries", "value": "25+" },
-        "pilgrims": { "label": "Pilgrims/Year", "value": "1 million+" }
-      }
-    },
-    "chitwan": {
-      "name": "Chitwan",
-      "description": "Wildlife safari adventures in Nepal's premier national park",
-      "detailedDescription": "Chitwan National Park, Nepal's first national park and a UNESCO World Heritage Site, offers incredible wildlife experiences in the heart of the Terai lowlands. Home to the endangered one-horned rhinoceros, Bengal tigers, and over 500 bird species, Chitwan provides thrilling safari adventures through diverse ecosystems including grasslands, forests, and riverine areas.",
-      "bestTimeToVisit": "October to March",
-      "duration": "2-4 days",
-      "difficulty": "Easy",
-      "priceRange": "$80-200 per day",
-      "highlights": {
-        "0": "Jungle Safari",
-        "1": "Rhino Spotting",
-        "2": "Elephant Rides"
-      },
-      "activities": {
-        "0": "Jeep Safari",
-        "1": "Elephant Safari",
-        "2": "Canoe Rides",
-        "3": "Bird Watching",
-        "4": "Nature Walks",
-        "5": "Tharu Cultural Show",
-        "6": "Crocodile Spotting",
-        "7": "Photography Tours"
-      },
-      "included": {
-        "0": "Safari guide",
-        "1": "Park permits",
-        "2": "All activities",
-        "3": "Cultural show"
-      },
-      "excluded": {
-        "0": "Accommodation upgrades",
-        "1": "Alcoholic beverages",
-        "2": "Personal expenses",
-        "3": "Tips"
-      },
-      "requirements": {
-        "0": "Neutral colored clothing",
-        "1": "Binoculars",
-        "2": "Camera",
-        "3": "Insect repellent"
-      },
-      "facts": {
-        "established": { "label": "Established", "value": "1973" },
-        "area": { "label": "Area", "value": "952.63 km²" },
-        "rhinoPopulation": { "label": "Rhino Population", "value": "645" },
-        "birdSpecies": { "label": "Bird Species", "value": "500+" }
-      }
-    },
-    "bhaktapur": {
-      "name": "Bhaktapur",
-      "description": "Medieval architecture and traditional Newari craftsmanship",
-      "detailedDescription": "Bhaktapur, also known as the 'City of Devotees,' is a living medieval city that has preserved its ancient charm and traditional way of life. This UNESCO World Heritage Site showcases the finest examples of Newari architecture, wood carving, and pottery making. Walking through its narrow alleys feels like stepping back in time, with every corner revealing intricate temples, courtyards, and artisan workshops.",
-      "bestTimeToVisit": "October to April",
-      "duration": "1-2 days",
-      "difficulty": "Easy",
-      "priceRange": "$40-100 per day",
-      "highlights": {
-        "0": "Pottery Square",
-        "1": "55-Window Palace",
-        "2": "Traditional Arts"
-      },
-      "activities": {
-        "0": "Durbar Square Tour",
-        "1": "Pottery Making",
-        "2": "Wood Carving Workshops",
-        "3": "Traditional Architecture",
-        "4": "Local Cuisine Tasting",
-        "5": "Artisan Visits",
-        "6": "Cultural Photography",
-        "7": "Temple Exploration"
-      },
-      "included": {
-        "0": "Heritage guide",
-        "1": "Entrance fees",
-        "2": "Pottery session",
-        "3": "Traditional lunch"
-      },
-      "excluded": {
-        "0": "Shopping expenses",
-        "1": "Additional workshops",
-        "2": "Transportation",
-        "3": "Personal purchases"
-      },
-      "requirements": {
-        "0": "Comfortable walking shoes",
-        "1": "Camera",
-        "2": "Respectful clothing",
-        "3": "Small daypack"
-      },
-      "facts": {
-        "founded": { "label": "Founded", "value": "12th century" },
-        "population": { "label": "Population", "value": "81,748" },
-        "temples": { "label": "Temples", "value": "172" },
-        "courtyards": { "label": "Courtyards", "value": "77" }
-      }
-    },
-    "modal": {
-      "overview": "Overview",
-      "activities": "Activities",
-      "whatsIncluded": "What's Included",
-      "bestTimeToVisit": "Best Time to Visit",
-      "duration": "Duration",
-      "difficultyLevel": "Difficulty Level",
-      "priceRange": "Price Range",
-      "keyFacts": "Key Facts",
-      "whatCanDo": "What You Can Do",
-      "includedInTour": "Included in Your Tour",
-      "notIncluded": "Not Included",
-      "whatToBring": "What to Bring",
-      "findGuides": "Find Guides for This Destination",
-      "contactCustomTour": "Contact for Custom Tour"
-    }
-  },
-  "features": {
-    "title": "Why Choose Ghumante Nepal?",
-    "subtitle": "We're committed to providing you with the most authentic, safe, and memorable Nepal experience possible.",
-    "certified": {
-      "title": "Certified Expert Guides",
-      "description": "All guides are government-certified, experienced, and background-checked for your complete safety and peace of mind."
-    },
-    "local": {
-      "title": "Local Insider Knowledge",
-      "description": "Native guides with deep cultural knowledge and access to hidden gems off the beaten path."
-    },
-    "support": {
-      "title": "24/7 Customer Support",
-      "description": "Round-the-clock assistance and emergency support throughout your entire Nepal journey."
-    },
-    "customized": {
-      "title": "Personalized Experiences",
-      "description": "Customized itineraries tailored to your interests, fitness level, and travel preferences."
-    }
-  },
-  "testimonials": {
-    "title": "What Our Travelers Say",
-    "subtitle": "Real stories from real adventures in Nepal",
-    "testimonial1": {
-      "name": "Rajesh Shrestha",
-      "country": "Nepal",
-      "text": "Our Everest Base Camp trek was absolutely incredible! Our guide Pemba was knowledgeable, friendly, and made sure we were safe every step of the way. The views were breathtaking and the cultural insights were invaluable.",
-      "trip": "Everest Base Camp Trek"
-    },
-    "testimonial2": {
-      "name": "Sita Gurung",
-      "country": "Nepal",
-      "text": "The cultural tour of Kathmandu Valley exceeded all expectations. Our guide showed us hidden temples and local markets that we never would have found on our own. Truly authentic experience!",
-      "trip": "Kathmandu Cultural Tour"
-    },
-    "testimonial3": {
-      "name": "Binod Tamang",
-      "country": "Nepal",
-      "text": "Perfect organization from start to finish. The Annapurna Circuit trek was challenging but our guide made it enjoyable and safe. The hospitality of the Nepalese people is unmatched!",
-      "trip": "Annapurna Circuit Trek"
-    }
-  },
-  "footer": {
-    "description": "Your trusted partner for authentic Nepal experiences. We connect travelers with certified local guides for safe, memorable, and culturally rich adventures across the beautiful landscapes of Nepal.",
-    "quickLinks": "Quick Links",
-    "support": "Support",
-    "helpCenter": "Help Center",
-    "safetyGuidelines": "Safety Guidelines",
-    "termsOfService": "Terms of Service",
-    "privacyPolicy": "Privacy Policy",
-    "contact": "Contact",
-    "followUs": "Follow Us",
-    "rights": "All rights reserved."
-  },
-  "guides": {
-    "guide": "Guide",
-    "tourist": "Tourist",
-    "title": "Find Your Perfect Guide",
-    "subtitle": "Connect with certified local experts",
-    "experience": "Experience",
-    "years": "years",
-    "rating": "Rating",
-    "bookNow": "Book Now",
-    "contactGuide": "Contact Guide",
-    "specialties": "Specialties",
-    "languages": "Languages",
-    "certified": "Certified",
-    "certifiedGuide": "Certified Guide",
-    "accessDenied": "Guides cannot access this page",
-    "failedToLoad": "Failed to load guides",
-    "adminManagement": "Admin guide management coming soon!",
-    "manageGuides": "Manage Guides",
-    "adminDescription": "View and manage all registered guides",
-    "guidesAvailable": "Available Guides",
-    "manageGuide": "Manage Guide",
-    "bookThisGuide": "Book This Guide"
-  },
-  "common": {
-    "loading": "Loading...",
-    "error": "Error",
-    "success": "Success",
-    "cancel": "Cancel",
-    "confirm": "Confirm",
-    "save": "Save",
-    "edit": "Edit",
-    "delete": "Delete",
-    "view": "View",
-    "search": "Search",
-    "filter": "Filter",
-    "sort": "Sort",
-    "next": "Next",
-    "previous": "Previous",
-    "close": "Close",
-    "submit": "Submit"
-  },
-  "pages": {
-    "availableGuides": {
-      "title": "Available Guides",
-      "subtitle": "Find and book your perfect Nepal guide",
-      "searchGuides": "Search Guides",
-      "searchPlaceholder": "Search by guide name...",
-      "noGuides": "No guides found",
-      "loading": "Loading guides...",
-      "bookGuide": "Book Guide",
-      "viewProfile": "View Profile",
-      "experience": "Experience",
-      "rating": "Rating",
-      "contact": "Contact"
-    },
-    "bookGuide": {
-      "title": "Book Your Guide",
-      "subtitle": "Send a booking request with your preferred date and message",
-      "guideInfo": "Guide Information",
-      "bookingForm": "Booking Form",
-      "bookingDetails": "Booking Details",
-      "selectDate": "Select Date",
-      "preferredDate": "Preferred Tour Date",
-      "message": "Message",
-      "messageToGuide": "Message to Guide",
-      "messagePlaceholder": "Tell the guide about your tour preferences, group size, experience level, and any special requirements...",
-      "bookingTips": "Booking Tips",
-      "tip1": "Select your preferred tour date",
-      "tip2": "Include details about your interests and experience level",
-      "tip3": "Mention group size and any special requirements",
-      "tip4": "The guide will respond within 24 hours",
-      "sendRequest": "Send Booking Request",
-      "sending": "Sending Request...",
-      "dateRequired": "Please select a date",
-      "messageRequired": "Please enter a message",
-      "dateAndMessageRequired": "Please select a date and enter a message",
-      "guideIdMissing": "Guide ID is missing",
-      "bookingSuccess": "Booking request sent successfully!",
-      "bookingError": "Failed to send booking request",
-      "errorLoadingGuide": "Failed to load guide details",
-      "loadingGuide": "Loading guide details...",
-      "requestInfo": "Your request will be sent directly to the guide"
+    "auth": {
+        "login": "Login",
+        "signup": "Sign Up",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "name": "Name",
+        "phone": "Phone Number",
+        "loginButton": "Login",
+        "signupButton": "Sign Up",
+        "touristSignup": "Tourist Sign Up",
+        "guideSignup": "Guide Sign Up",
+        "alreadyAccount": "Already have an account?",
+        "noAccount": "Don't have an account? Create one:",
+        "signupAs": "Sign up as",
+        "tourist": "Tourist",
+        "guide": "Guide",
+        "welcomeBack": "Welcome Back",
+        "signInDescription": "Sign in to continue your Nepal adventure",
+        "joinAsGuide": "Join as Guide",
+        "joinAsTourist": "Join as Tourist",
+        "startYourAdventure": "Start Your Adventure",
+        "becomeAGuide": "Become a Guide",
+        "createAccount": "Create Your Account",
+        "profileSetup": "Profile Setup",
+        "profilePicture": "Profile Picture",
+        "guideLicense": "Guide License",
+        "uploadLicense": "Upload Guide License",
+        "loginRequired": "You must be logged in to view this page",
+        "uploadProfile": "Upload Profile Picture",
+        "termsAgree": "By creating an account, you agree to our Terms of Service and Privacy Policy",
+        "loginAgree": "By signing in, you agree to our Terms of Service and Privacy Policy",
+        "signupSuccess": "Account created successfully! Please login.",
+        "signupError": "Signup failed. Please try again.",
+        "personalInfo": "Personal Information",
+        "fullName": "Full Name",
+        "enterFullName": "Enter your full name",
+        "pleaseEnterName": "Please enter your full name",
+        "emailAddress": "Email Address",
+        "pleaseEnterEmail": "Please enter your email",
+        "validEmail": "Please enter a valid email",
+        "phoneNumber": "Phone Number",
+        "pleaseEnterPhone": "Please enter your phone number",
+        "pleaseEnterPassword": "Please enter a password",
+        "passwordMinLength": "Password must be at least 6 characters",
+        "createPassword": "Create a strong password",
+        "creatingAccount": "Creating Account...",
+        "createTouristAccount": "Create Tourist Account",
+        "loginHere": "Login here",
+        "becomeGuideInstead": "Want to become a guide instead?",
+        "signupAsGuide": "Sign up as Guide",
+        "completeProfile": "Complete your profile",
+        "backToLogin": "Back to Login",
+        "personalInformation": "Personal Information",
+        "requiredDocuments": "Required Documents",
+        "uploadGuideLicense": "Please upload your guide license",
+        "dragLicense": "Click or drag your license document here (PDF, JPG, PNG)",
+        "dragPhoto": "Click or drag your photo here (JPG, PNG)",
+        "createGuideAccount": "Create Guide Account",
+        "shareExpertise": "Share your local expertise and earn money",
+        "optional": "Optional",
+        "signInContinue": "Sign in to continue your Nepal adventure",
+        "emailPlaceholder": "example@email.com",
+        "passwordPlaceholder": "••••••••",
+        "emailRequired": "Please enter your email",
+        "emailInvalid": "Enter a valid email",
+        "passwordRequired": "Password is required",
+        "signingIn": "Signing In...",
+        "asTourist": "As Tourist",
+        "asGuide": "As Guide",
+        "agreeTerms": "By signing in, you agree to our Terms of Service and Privacy Policy",
+        "loginSuccess": "Login successful!",
+        "loginError": "Login failed. Please try again."
     },
     "dashboard": {
-      "myBookings": "My Bookings",
-      "myProfile": "My Profile",
-      "browseGuides": "Browse Guides",
-      "exploreDest": "Explore Destinations",
-      "findNewGuides": "Find New Guides",
-      "viewDashboard": "View My Dashboard",
-      "manageBookings": "Manage Bookings",
-      "checkDashboard": "Check your dashboard for new booking requests and manage your tours.",
-      "continueAdventure": "Continue your Nepal adventure by booking amazing experiences with our certified guides.",
-      "welcomeBack": "Welcome back"
+        "common": {
+            "noValidToken": "No valid token found",
+            "failedToLoadBookings": "Failed to load bookings",
+            "bookingCancelledSuccess": "Booking cancelled successfully!",
+            "failedToCancelBooking": "Failed to cancel booking",
+            "tourDate": "Tour Date",
+            "message": "Message",
+            "status": "Status",
+            "actions": "Actions",
+            "cancel": "Cancel",
+            "view": "View",
+            "accept": "Accept",
+            "reject": "Reject",
+            "viewDetailsComingSoon": "View details feature coming soon!",
+            "totalBookings": "Total Bookings",
+            "totalRequests": "Total Requests",
+            "pending": "Pending",
+            "confirmed": "Confirmed",
+            "accepted": "Accepted",
+            "completed": "Completed",
+            "myBookings": "My Bookings",
+            "manageNepalBookings": "Manage your Nepal tour bookings",
+            "guideDashboard": "Guide Dashboard",
+            "manageTourRequests": "Manage your tour booking requests",
+            "bookingHistory": "Booking History",
+            "bookingRequests": "Booking Requests",
+            "viewManageBookings": "View and manage all your tour bookings",
+            "viewManageRequests": "View and manage all tour booking requests",
+            "of": "of",
+            "bookings": "bookings",
+            "requests": "requests",
+            "noBookingsYet": "No bookings yet",
+            "noRequestsYet": "No booking requests yet",
+            "startNepalAdventure": "Start your Nepal adventure by booking an expert guide",
+            "whenTouristsBook": "When tourists book your guide services, their requests will appear here",
+            "browseGuides": "Browse Guides",
+            "pendingRequestAlert": "You have {count} pending booking request(s)",
+            "reviewRespond": "Review and respond to tourist requests below",
+            "bookingStatusUpdated": "Booking {status} successfully!",
+            "failedToUpdateStatus": "Failed to update booking status"
+        },
+        "welcome": "Welcome",
+        "bookings": "Bookings",
+        "profile": "Profile",
+        "guides": "Guides",
+        "users": "Users",
+        "stats": "Statistics",
+        "activeGuides": "Active Guides",
+        "totalUsers": "Total Users",
+        "revenue": "Revenue",
+        "recentBookings": "Recent Bookings",
+        "date": "Date",
+        "cancelled": "Cancelled"
     },
-    "homepage": {
-      "cta": {
-        "readyToStart": "Ready to Start Your Nepal Adventure?",
-        "joinThousands": "Join thousands of travelers who've discovered Nepal's wonders with our certified guides. Your journey of a lifetime is just one click away.",
-        "bookGuideToday": "Book Your Guide Today",
-        "browseDestinations": "Browse Destinations"
-      }
+    "destinations": {
+        "title": "Popular Destinations",
+        "subtitle": "Explore Nepal's most breathtaking locations",
+        "clickToExplore": "Click to explore",
+        "toursAvailable": "tours available",
+        "pokhara": {
+            "name": "Pokhara",
+            "description": "Gateway to the Annapurnas with pristine lakes and stunning mountain views",
+            "detailedDescription": "Pokhara, Nepal's adventure capital, sits majestically beside the tranquil Phewa Lake with the dramatic Annapurna range forming a stunning backdrop. This enchanting city offers the perfect blend of natural beauty, adventure activities, and cultural experiences. From paragliding over the valley to exploring ancient temples and caves, Pokhara provides unforgettable memories for every type of traveler.",
+            "bestTimeToVisit": "October to December, March to May",
+            "duration": "3-7 days",
+            "difficulty": "Easy",
+            "priceRange": "$50-150 per day",
+            "highlights": {
+                "0": "Phewa Lake",
+                "1": "Annapurna Range",
+                "2": "Adventure Sports"
+            },
+            "activities": {
+                "0": "Paragliding",
+                "1": "Boating on Phewa Lake",
+                "2": "Sarangkot Sunrise",
+                "3": "World Peace Pagoda",
+                "4": "Devi's Fall",
+                "5": "Gupteshwor Cave",
+                "6": "Mountain Biking",
+                "7": "Zip-lining"
+            },
+            "included": {
+                "0": "Professional guide",
+                "1": "Transportation",
+                "2": "Entrance fees",
+                "3": "Safety equipment"
+            },
+            "excluded": {
+                "0": "Meals",
+                "1": "Accommodation",
+                "2": "Personal expenses",
+                "3": "Travel insurance"
+            },
+            "requirements": {
+                "0": "Comfortable walking shoes",
+                "1": "Sun protection",
+                "2": "Camera",
+                "3": "Light jacket"
+            },
+            "facts": {
+                "altitude": {
+                    "label": "Altitude",
+                    "value": "822m"
+                },
+                "population": {
+                    "label": "Population",
+                    "value": "518,000"
+                },
+                "lakeArea": {
+                    "label": "Lake Area",
+                    "value": "5.23 km²"
+                },
+                "founded": {
+                    "label": "Founded",
+                    "value": "1786"
+                }
+            }
+        },
+        "kathmandu": {
+            "name": "Kathmandu",
+            "description": "Ancient temples, vibrant markets, and rich cultural heritage",
+            "detailedDescription": "Kathmandu, the vibrant capital of Nepal, is a living museum where ancient traditions seamlessly blend with modern life. The city is home to seven UNESCO World Heritage Sites, bustling markets, and some of the most sacred Hindu and Buddhist temples in the world. Every corner tells a story of centuries-old craftsmanship, spiritual devotion, and cultural richness that continues to thrive today.",
+            "bestTimeToVisit": "October to December, February to April",
+            "duration": "2-5 days",
+            "difficulty": "Easy",
+            "priceRange": "$40-120 per day",
+            "highlights": {
+                "0": "Durbar Square",
+                "1": "Swayambhunath",
+                "2": "Thamel District"
+            },
+            "activities": {
+                "0": "Durbar Square Tour",
+                "1": "Swayambhunath Temple",
+                "2": "Boudhanath Stupa",
+                "3": "Pashupatinath Temple",
+                "4": "Thamel Shopping",
+                "5": "Cooking Classes",
+                "6": "Cultural Shows",
+                "7": "Art Galleries"
+            },
+            "included": {
+                "0": "Expert cultural guide",
+                "1": "Temple entrance fees",
+                "2": "Traditional lunch",
+                "3": "Cultural performance"
+            },
+            "excluded": {
+                "0": "Hotel pickup",
+                "1": "Personal shopping",
+                "2": "Tips",
+                "3": "Additional meals"
+            },
+            "requirements": {
+                "0": "Respectful clothing",
+                "1": "Comfortable shoes",
+                "2": "Scarf for temples",
+                "3": "Small backpack"
+            },
+            "facts": {
+                "altitude": {
+                    "label": "Altitude",
+                    "value": "1,400m"
+                },
+                "population": {
+                    "label": "Population",
+                    "value": "1.4 million"
+                },
+                "unescoSites": {
+                    "label": "UNESCO Sites",
+                    "value": "7"
+                },
+                "founded": {
+                    "label": "Founded",
+                    "value": "723 AD"
+                }
+            }
+        },
+        "everest": {
+            "name": "Mount Everest",
+            "description": "World's highest peak and the ultimate trekking adventure",
+            "detailedDescription": "Mount Everest, standing at 8,848.86 meters, represents the ultimate adventure for trekkers worldwide. The journey to Everest Base Camp is not just about reaching a destination; it's about experiencing the incredible Sherpa culture, witnessing breathtaking Himalayan vistas, and pushing your personal limits. This life-changing trek takes you through diverse landscapes, from lush forests to glacial moraines, while offering unparalleled mountain views.",
+            "bestTimeToVisit": "March to May, September to November",
+            "duration": "12-16 days",
+            "difficulty": "Challenging",
+            "priceRange": "$1,200-2,500 total",
+            "highlights": {
+                "0": "Base Camp Trek",
+                "1": "Sherpa Culture",
+                "2": "Himalayan Views"
+            },
+            "activities": {
+                "0": "Base Camp Trekking",
+                "1": "Sherpa Village Visits",
+                "2": "Monastery Tours",
+                "3": "Acclimatization Hikes",
+                "4": "Photography Tours",
+                "5": "Cultural Immersion",
+                "6": "Mountain Views",
+                "7": "Glacier Exploration"
+            },
+            "included": {
+                "0": "Experienced Sherpa guide",
+                "1": "Porter service",
+                "2": "All permits",
+                "3": "Accommodation in teahouses"
+            },
+            "excluded": {
+                "0": "International flights",
+                "1": "Kathmandu hotels",
+                "2": "Personal gear",
+                "3": "Emergency evacuation insurance"
+            },
+            "requirements": {
+                "0": "Good physical fitness",
+                "1": "Trekking experience",
+                "2": "Proper gear",
+                "3": "Travel insurance"
+            },
+            "facts": {
+                "height": {
+                    "label": "Height",
+                    "value": "8,848.86m"
+                },
+                "baseCampAlt": {
+                    "label": "Base Camp Alt.",
+                    "value": "5,364m"
+                },
+                "firstAscent": {
+                    "label": "First Ascent",
+                    "value": "1953"
+                },
+                "successRate": {
+                    "label": "Success Rate",
+                    "value": "60%"
+                }
+            }
+        },
+        "lumbini": {
+            "name": "Lumbini",
+            "description": "Sacred birthplace of Buddha and spiritual pilgrimage site",
+            "detailedDescription": "Lumbini, the birthplace of Lord Buddha, is one of the most sacred pilgrimage sites for Buddhists worldwide. This UNESCO World Heritage Site offers a profound spiritual experience with its peaceful gardens, ancient ruins, and modern monasteries built by Buddhist communities from around the world. The site provides a unique opportunity to explore Buddhist philosophy, meditation practices, and the life of Siddhartha Gautama.",
+            "bestTimeToVisit": "October to March",
+            "duration": "1-3 days",
+            "difficulty": "Easy",
+            "priceRange": "$30-80 per day",
+            "highlights": {
+                "0": "Maya Devi Temple",
+                "1": "Peace Pagoda",
+                "2": "Monasteries"
+            },
+            "activities": {
+                "0": "Maya Devi Temple Visit",
+                "1": "Meditation Sessions",
+                "2": "Monastery Tours",
+                "3": "Peace Pagoda",
+                "4": "Archaeological Sites",
+                "5": "Buddhist Philosophy Classes",
+                "6": "Spiritual Walks",
+                "7": "Cultural Programs"
+            },
+            "included": {
+                "0": "Spiritual guide",
+                "1": "Temple access",
+                "2": "Meditation session",
+                "3": "Cultural presentation"
+            },
+            "excluded": {
+                "0": "Accommodation",
+                "1": "Meals",
+                "2": "Transportation",
+                "3": "Personal donations"
+            },
+            "requirements": {
+                "0": "Respectful attire",
+                "1": "Quiet demeanor",
+                "2": "Open mind",
+                "3": "Comfortable shoes"
+            },
+            "facts": {
+                "founded": {
+                    "label": "Founded",
+                    "value": "563 BC"
+                },
+                "area": {
+                    "label": "Area",
+                    "value": "1.55 km²"
+                },
+                "monasteries": {
+                    "label": "Monasteries",
+                    "value": "25+"
+                },
+                "pilgrims": {
+                    "label": "Pilgrims/Year",
+                    "value": "1 million+"
+                }
+            }
+        },
+        "chitwan": {
+            "name": "Chitwan",
+            "description": "Wildlife safari adventures in Nepal's premier national park",
+            "detailedDescription": "Chitwan National Park, Nepal's first national park and a UNESCO World Heritage Site, offers incredible wildlife experiences in the heart of the Terai lowlands. Home to the endangered one-horned rhinoceros, Bengal tigers, and over 500 bird species, Chitwan provides thrilling safari adventures through diverse ecosystems including grasslands, forests, and riverine areas.",
+            "bestTimeToVisit": "October to March",
+            "duration": "2-4 days",
+            "difficulty": "Easy",
+            "priceRange": "$80-200 per day",
+            "highlights": {
+                "0": "Jungle Safari",
+                "1": "Rhino Spotting",
+                "2": "Elephant Rides"
+            },
+            "activities": {
+                "0": "Jeep Safari",
+                "1": "Elephant Safari",
+                "2": "Canoe Rides",
+                "3": "Bird Watching",
+                "4": "Nature Walks",
+                "5": "Tharu Cultural Show",
+                "6": "Crocodile Spotting",
+                "7": "Photography Tours"
+            },
+            "included": {
+                "0": "Safari guide",
+                "1": "Park permits",
+                "2": "All activities",
+                "3": "Cultural show"
+            },
+            "excluded": {
+                "0": "Accommodation upgrades",
+                "1": "Alcoholic beverages",
+                "2": "Personal expenses",
+                "3": "Tips"
+            },
+            "requirements": {
+                "0": "Neutral colored clothing",
+                "1": "Binoculars",
+                "2": "Camera",
+                "3": "Insect repellent"
+            },
+            "facts": {
+                "established": {
+                    "label": "Established",
+                    "value": "1973"
+                },
+                "area": {
+                    "label": "Area",
+                    "value": "952.63 km²"
+                },
+                "rhinoPopulation": {
+                    "label": "Rhino Population",
+                    "value": "645"
+                },
+                "birdSpecies": {
+                    "label": "Bird Species",
+                    "value": "500+"
+                }
+            }
+        },
+        "bhaktapur": {
+            "name": "Bhaktapur",
+            "description": "Medieval architecture and traditional Newari craftsmanship",
+            "detailedDescription": "Bhaktapur, also known as the 'City of Devotees,' is a living medieval city that has preserved its ancient charm and traditional way of life. This UNESCO World Heritage Site showcases the finest examples of Newari architecture, wood carving, and pottery making. Walking through its narrow alleys feels like stepping back in time, with every corner revealing intricate temples, courtyards, and artisan workshops.",
+            "bestTimeToVisit": "October to April",
+            "duration": "1-2 days",
+            "difficulty": "Easy",
+            "priceRange": "$40-100 per day",
+            "highlights": {
+                "0": "Pottery Square",
+                "1": "55-Window Palace",
+                "2": "Traditional Arts"
+            },
+            "activities": {
+                "0": "Durbar Square Tour",
+                "1": "Pottery Making",
+                "2": "Wood Carving Workshops",
+                "3": "Traditional Architecture",
+                "4": "Local Cuisine Tasting",
+                "5": "Artisan Visits",
+                "6": "Cultural Photography",
+                "7": "Temple Exploration"
+            },
+            "included": {
+                "0": "Heritage guide",
+                "1": "Entrance fees",
+                "2": "Pottery session",
+                "3": "Traditional lunch"
+            },
+            "excluded": {
+                "0": "Shopping expenses",
+                "1": "Additional workshops",
+                "2": "Transportation",
+                "3": "Personal purchases"
+            },
+            "requirements": {
+                "0": "Comfortable walking shoes",
+                "1": "Camera",
+                "2": "Respectful clothing",
+                "3": "Small daypack"
+            },
+            "facts": {
+                "founded": {
+                    "label": "Founded",
+                    "value": "12th century"
+                },
+                "population": {
+                    "label": "Population",
+                    "value": "81,748"
+                },
+                "temples": {
+                    "label": "Temples",
+                    "value": "172"
+                },
+                "courtyards": {
+                    "label": "Courtyards",
+                    "value": "77"
+                }
+            }
+        },
+        "modal": {
+            "overview": "Overview",
+            "activities": "Activities",
+            "whatsIncluded": "What's Included",
+            "bestTimeToVisit": "Best Time to Visit",
+            "duration": "Duration",
+            "difficultyLevel": "Difficulty Level",
+            "priceRange": "Price Range",
+            "keyFacts": "Key Facts",
+            "whatCanDo": "What You Can Do",
+            "includedInTour": "Included in Your Tour",
+            "notIncluded": "Not Included",
+            "whatToBring": "What to Bring",
+            "findGuides": "Find Guides for This Destination",
+            "contactCustomTour": "Contact for Custom Tour"
+        }
+    },
+    "features": {
+        "title": "Why Choose Ghumante Nepal?",
+        "subtitle": "We're committed to providing you with the most authentic, safe, and memorable Nepal experience possible.",
+        "certified": {
+            "title": "Certified Expert Guides",
+            "description": "All guides are government-certified, experienced, and background-checked for your complete safety and peace of mind."
+        },
+        "local": {
+            "title": "Local Insider Knowledge",
+            "description": "Native guides with deep cultural knowledge and access to hidden gems off the beaten path."
+        },
+        "support": {
+            "title": "24/7 Customer Support",
+            "description": "Round-the-clock assistance and emergency support throughout your entire Nepal journey."
+        },
+        "customized": {
+            "title": "Personalized Experiences",
+            "description": "Customized itineraries tailored to your interests, fitness level, and travel preferences."
+        }
+    },
+    "testimonials": {
+        "title": "What Our Travelers Say",
+        "subtitle": "Real stories from real adventures in Nepal",
+        "testimonial1": {
+            "name": "Rajesh Shrestha",
+            "country": "Nepal",
+            "text": "Our Everest Base Camp trek was absolutely incredible! Our guide Pemba was knowledgeable, friendly, and made sure we were safe every step of the way. The views were breathtaking and the cultural insights were invaluable.",
+            "trip": "Everest Base Camp Trek"
+        },
+        "testimonial2": {
+            "name": "Sita Gurung",
+            "country": "Nepal",
+            "text": "The cultural tour of Kathmandu Valley exceeded all expectations. Our guide showed us hidden temples and local markets that we never would have found on our own. Truly authentic experience!",
+            "trip": "Kathmandu Cultural Tour"
+        },
+        "testimonial3": {
+            "name": "Binod Tamang",
+            "country": "Nepal",
+            "text": "Perfect organization from start to finish. The Annapurna Circuit trek was challenging but our guide made it enjoyable and safe. The hospitality of the Nepalese people is unmatched!",
+            "trip": "Annapurna Circuit Trek"
+        }
+    },
+    "footer": {
+        "description": "Your trusted partner for authentic Nepal experiences. We connect travelers with certified local guides for safe, memorable, and culturally rich adventures across the beautiful landscapes of Nepal.",
+        "quickLinks": "Quick Links",
+        "support": "Support",
+        "helpCenter": "Help Center",
+        "safetyGuidelines": "Safety Guidelines",
+        "termsOfService": "Terms of Service",
+        "privacyPolicy": "Privacy Policy",
+        "contact": "Contact",
+        "followUs": "Follow Us",
+        "rights": "All rights reserved."
+    },
+    "guides": {
+        "guide": "Guide",
+        "tourist": "Tourist",
+        "title": "Find Your Perfect Guide",
+        "subtitle": "Connect with certified local experts",
+        "experience": "Experience",
+        "years": "years",
+        "rating": "Rating",
+        "bookNow": "Book Now",
+        "contactGuide": "Contact Guide",
+        "specialties": "Specialties",
+        "languages": "Languages",
+        "certified": "Certified",
+        "certifiedGuide": "Certified Guide",
+        "accessDenied": "Guides cannot access this page",
+        "failedToLoad": "Failed to load guides",
+        "adminManagement": "Admin guide management coming soon!",
+        "manageGuides": "Manage Guides",
+        "adminDescription": "View and manage all registered guides",
+        "guidesAvailable": "Available Guides",
+        "manageGuide": "Manage Guide",
+        "bookThisGuide": "Book This Guide"
+    },
+    "common": {
+        "loading": "Loading...",
+        "error": "Error",
+        "success": "Success",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "save": "Save",
+        "edit": "Edit",
+        "delete": "Delete",
+        "view": "View",
+        "search": "Search",
+        "filter": "Filter",
+        "sort": "Sort",
+        "next": "Next",
+        "previous": "Previous",
+        "close": "Close",
+        "submit": "Submit"
+    },
+    "pages": {
+        "availableGuides": {
+            "title": "Available Guides",
+            "subtitle": "Find and book your perfect Nepal guide",
+            "searchGuides": "Search Guides",
+            "searchPlaceholder": "Search by guide name...",
+            "noGuides": "No guides found",
+            "loading": "Loading guides...",
+            "bookGuide": "Book Guide",
+            "viewProfile": "View Profile",
+            "experience": "Experience",
+            "rating": "Rating",
+            "contact": "Contact"
+        },
+        "bookGuide": {
+            "title": "Book Your Guide",
+            "subtitle": "Send a booking request with your preferred date and message",
+            "guideInfo": "Guide Information",
+            "bookingForm": "Booking Form",
+            "bookingDetails": "Booking Details",
+            "selectDate": "Select Date",
+            "preferredDate": "Preferred Tour Date",
+            "message": "Message",
+            "messageToGuide": "Message to Guide",
+            "messagePlaceholder": "Tell the guide about your tour preferences, group size, experience level, and any special requirements...",
+            "bookingTips": "Booking Tips",
+            "tip1": "Select your preferred tour date",
+            "tip2": "Include details about your interests and experience level",
+            "tip3": "Mention group size and any special requirements",
+            "tip4": "The guide will respond within 24 hours",
+            "sendRequest": "Send Booking Request",
+            "sending": "Sending Request...",
+            "dateRequired": "Please select a date",
+            "messageRequired": "Please enter a message",
+            "dateAndMessageRequired": "Please select a date and enter a message",
+            "guideIdMissing": "Guide ID is missing",
+            "bookingSuccess": "Booking request sent successfully!",
+            "bookingError": "Failed to send booking request",
+            "errorLoadingGuide": "Failed to load guide details",
+            "loadingGuide": "Loading guide details...",
+            "requestInfo": "Your request will be sent directly to the guide"
+        },
+        "dashboard": {
+            "myBookings": "My Bookings",
+            "myProfile": "My Profile",
+            "browseGuides": "Browse Guides",
+            "exploreDest": "Explore Destinations",
+            "findNewGuides": "Find New Guides",
+            "viewDashboard": "View My Dashboard",
+            "manageBookings": "Manage Bookings",
+            "checkDashboard": "Check your dashboard for new booking requests and manage your tours.",
+            "continueAdventure": "Continue your Nepal adventure by booking amazing experiences with our certified guides.",
+            "welcomeBack": "Welcome back"
+        },
+        "homepage": {
+            "cta": {
+                "readyToStart": "Ready to Start Your Nepal Adventure?",
+                "joinThousands": "Join thousands of travelers who've discovered Nepal's wonders with our certified guides. Your journey of a lifetime is just one click away.",
+                "bookGuideToday": "Book Your Guide Today",
+                "browseDestinations": "Browse Destinations"
+            }
+        }
+    },
+    "language": {
+        "english": "English",
+        "nepali": "नेपाली",
+        "spanish": "Español",
+        "chinese": "中文",
+        "switchLanguage": "Switch Language"
     }
-  },
-  "language": {
-    "english": "English",
-    "nepali": "नेपाली",
-    "spanish": "Español",
-    "chinese": "中文",
-    "switchLanguage": "Switch Language"
-  }
 }
