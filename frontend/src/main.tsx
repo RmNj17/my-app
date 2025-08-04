@@ -6,6 +6,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import "@ant-design/v5-patch-for-react-19";
 import { message } from "antd";
 import "./index.css";
+import "./i18n";
 
 message.config({
   top: 0,
